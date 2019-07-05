@@ -1,3 +1,4 @@
+//reference approach 3 solution of leetcode 162. Find Peak Element 
 class SearchPeak{
   static int findPeak(int[] array) {
 	  int l=0; int r= array.length-1;
