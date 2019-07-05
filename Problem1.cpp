@@ -12,16 +12,20 @@ class Solution{
 public:
     vector<int> Problem1(vector<int>& arr, int target){
        int start = IterativeBinarySearch(arr,0,arr.size()-1,target);
-       int end = start;
-       if(start!=(-1)){
-           for(int x = start+1; x<arr.size();x++){
-               if(arr[x]==target){
-                   end = x;
-               }else{
-                   break;
-               }
-           }
+       int end = EndBinarySearch(arr,0,arr.size()-1,target);
+       if(end==(-1) && start!=(-1)){
+           end =start;
        }
+//       int end = start;
+//       if(start!=(-1)){
+//           for(int x = start+1; x<arr.size();x++){
+//               if(arr[x]==target){
+//                   end = x;
+//               }else{
+//                   break;
+//               }
+//           }
+//       }
        vector<int> vec{start,end};
        cout<<"["<<start<<","<<end<<"]\n"; return vec;
     }
@@ -47,6 +51,24 @@ private:
         binarySearch(arr,low,high,target);
     }
 
+    int EndBinarySearch(vector<int>& arr, int l, int h, int target){
+        int low = l; int high = h; int mid;
+        while(low<=high){
+            mid = low+(high-low)/2;
+            if(arr[mid]==target){
+                if(((mid+1)<arr.size()) && (arr[mid+1]==target)){
+                    low = mid + 1;
+                }else{
+                    return mid;
+                }
+            }else if(arr[mid]>target){
+                high = mid-1;
+            }else if(arr[mid]<target){
+                low = mid+1;
+            }
+        }
+        return -1;
+    }
     int IterativeBinarySearch(vector<int>& arr, int l, int h, int target){
         int low = l; int high = h; int mid;
         while(low<=high){
