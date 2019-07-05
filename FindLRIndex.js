@@ -1,7 +1,7 @@
 class FindLRIndex {
      private static int find(int[] nums, int target, boolean left) {
         int low = 0;
-        int high = nums.length;
+        int high = nums.length-1;
 
         while (low < high) {
             int mid = low + (high-low) / 2;
