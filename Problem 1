@@ -1,0 +1,37 @@
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int low =0;
+        int high =nums.length-1;
+        int posPrev=0,posNext=0;
+        int mid;
+        
+        if(nums.length==0||nums==null)
+            return new int[]{-1,-1};
+        
+        while(low<=high)
+        {
+          mid = low+(high-low)/2;
+            if(nums[mid]==target) //first locate the position of target using binary search
+            {
+
+                posPrev = mid; //search on the left of target
+                posNext = mid; //search on the right of target
+            
+                while((posPrev-1)>=0 && nums[posPrev-1]==target) 
+                    posPrev--;
+                while((posNext+1)<nums.length && nums[posNext+1]==target)
+                    posNext++;
+                return new int[]{posPrev,posNext};
+            }
+            else if(target<nums[mid])
+            {
+                high = mid-1;
+            }
+            else
+            {
+                low = mid+1;
+            }
+        }
+         return new int[]{-1,-1};
+    }
+}
