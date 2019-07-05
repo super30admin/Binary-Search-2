@@ -22,6 +22,7 @@ public:
                }
            }
        }
+       vector<int> vec{start,end};
        cout<<"["<<start<<","<<end<<"]\n";
     }
 
