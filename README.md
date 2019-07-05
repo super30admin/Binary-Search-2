@@ -35,7 +35,7 @@ Example 2:
 Input: [4,5,6,7,0,1,2]
 Output: 0
 
-##Problem 3:
+## Problem 3:
 A peak element is an element that is greater than its neighbors.
 
 Given an input array nums, where nums[i] ≠ nums[i+1], find a peak element and return its index.
