@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution{
 public:
-    void Problem1(vector<int>& arr, int target){
+    vector<int> Problem1(vector<int>& arr, int target){
        int start = IterativeBinarySearch(arr,0,arr.size()-1,target);
        int end = start;
        if(start!=(-1)){
@@ -23,7 +23,7 @@ public:
            }
        }
        vector<int> vec{start,end};
-       cout<<"["<<start<<","<<end<<"]\n";
+       cout<<"["<<start<<","<<end<<"]\n"; return vec;
     }
 
 private:
@@ -34,12 +34,8 @@ private:
         }
         int mid = low+(high-low)/2;
         if(arr[mid]==target){
-            if((mid-1)>=0){
-                if(arr[mid-1]==target){
-                    high = mid - 1;
-                }else{
-                    return mid;
-                }
+            if(((mid-1)>=0) && (arr[mid-1]==target)){
+                high = mid - 1;
             }else{
                 return mid;
             }
@@ -50,17 +46,14 @@ private:
         }
         binarySearch(arr,low,high,target);
     }
+
     int IterativeBinarySearch(vector<int>& arr, int l, int h, int target){
         int low = l; int high = h; int mid;
         while(low<=high){
             mid = low+(high-low)/2;
             if(arr[mid]==target){
-                if((mid-1)>=0){
-                    if(arr[mid-1]==target){
-                        high = mid - 1;
-                    }else{
-                        return mid;
-                    }
+                if(((mid-1)>=0) && (arr[mid-1]==target)){
+                    high = mid - 1;
                 }else{
                     return mid;
                 }
