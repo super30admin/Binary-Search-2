@@ -17,7 +17,7 @@ private:
     int findPeek(vector<int>& nums,int low, int high){
         int mid;
         while(low!=high){
-            mid = (low+high)/2;
+            mid = (low)+(high-low)/2;
             if((mid+1)<nums.size() && nums[mid+1]>nums[mid]){
                 low = mid + 1;
             }else if((mid-1)>=0 && nums[mid-1]>nums[mid]){
