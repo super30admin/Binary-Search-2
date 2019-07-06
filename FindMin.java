@@ -17,7 +17,7 @@ class searchInSortedArray{
 		 // Check if mid itself is minimum element 
 		if(mid>low && nums[mid]< nums[mid-1]) return nums[mid];
 		
-		if(nums[mid]<high) return findMin(nums,low,mid-1);
+		if(nums[mid]<nums[high]) return findMin(nums,low,mid-1);
 		else return findMin(nums,mid+1,high);
 	}
 	
