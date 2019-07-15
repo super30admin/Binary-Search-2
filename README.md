@@ -1,4 +1,4 @@
-# Day4
+# Binary-Search-2
 
 ## Problem 1:
 
