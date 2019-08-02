@@ -1,0 +1,35 @@
+import java.util.Stack;
+
+class PeekElement {
+ 
+	static int var=0;
+	public static int search(int[] a,int l,int h)
+	{
+		if(l<=h) {
+			int mid=l+(h-l)/2;
+			if(mid==0 && a[mid]>a[mid+1])
+			{
+					var= mid;
+			}
+			else if(mid==a.length-1 && a[mid]>a[mid-1])
+			{
+					var= mid;
+			}
+			else if(a[mid]>a[mid+1] && a[mid]>a[mid-1])
+				var= mid;
+			else
+			{
+				search(a,l,mid-1);
+				search(a,mid+1,h);
+			}
+		}
+		return var;
+	}
+    public static void main(String[] args) 
+    { 
+    	int[] a=new int[] {4,5,3,7,10,1,2,1};
+    	int l=0,h=a.length-1,mid;
+    	System.out.println(search(a,l,h));
+    } 
+  
+}
