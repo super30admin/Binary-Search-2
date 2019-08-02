@@ -1,0 +1,32 @@
+import java.util.Stack;
+
+class Minimum{
+ 
+    public static void main(String[] args) 
+    { 
+    	int[] a=new int[] {4,5,6,7,10,15,-1,0,1,2};
+    	int l=0,h=a.length-1,mid,min=a[0];
+    	while(l<=h)
+    	{
+    		mid=l+(h-l)/2;
+    		if(a[l]<=a[mid])
+    		{
+    			if(a[l]<=min)
+    			{
+    				min=a[l];
+    			}
+    			l=mid+1;
+    		}
+    		else
+    		{
+    			if(a[mid]<=min)
+    			{
+    				min=a[mid];
+    			}
+    			h=mid-1;
+    		}
+    	}
+    	System.out.println(min);
+    } 
+  
+}

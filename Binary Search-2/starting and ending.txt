@@ -1,0 +1,76 @@
+class Demo
+{
+
+    public static int[] binarySearch(int[] arr,int low,int high,int target)
+
+    {
+
+        int[] key=new int[2];
+
+        int mid,x=-1;
+
+        while(low<=high)
+
+        {
+
+            mid=low+(high-low)/2;
+
+            if(arr[mid]==target)
+
+            {
+
+                if(arr[mid+1]==target)
+
+                {
+
+                    key[++x]=mid;
+
+                    key[++x]=mid+1;
+
+                    break;
+
+                }
+
+                else
+
+                {
+
+                    key[++x]=mid-1;
+
+                    key[++x]=mid;
+
+                    break;
+
+                }
+
+            }
+
+            else if(target>arr[mid])
+
+                low=mid+1;
+
+            else
+
+                high=mid-1;
+
+        }
+
+        return key;
+
+    }
+
+    public static void main (String[] args)
+ 
+    {
+
+        int [] a=new int[]{1,2,4,5,6,7,8,8,9,10,11,12,13};
+
+        int low=0,high=a.length-1,target=8;
+
+        int[] x=binarySearch(a,low,high,target);
+
+        System.out.println(x[0]+" "+x[1]);
+
+    }
+
+}
