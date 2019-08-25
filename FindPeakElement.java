@@ -9,8 +9,9 @@
  * 
  * Space Complexity: O(1) Time Complexity: O(log n)
  * 
- * Not yet submitted, the following code contains bugs
- * TODO: Fix the Bug
+ * Leetcode Result:
+ * Runtime: 0 ms, faster than 100.00% of Java online submissions for Find Peak Element.
+ * Memory Usage: 38.1 MB, less than 100.00% of Java online submissions for Find Peak Element.
  */
 public class FindPeakElement {
     /**
@@ -20,13 +21,16 @@ public class FindPeakElement {
      * @return peak element index
      */
     public int findPeakElement(int[] nums) {
-        int low = 0, high = nums.length - 1;
+        if(nums == null || nums.length == 0) {
+            return -1;
+        }
+        if(nums.length == 1) {
+            return 0;
+        }
+        int low = 0, high = nums.length- 1;
         while (low < high) {
             int mid = low + (high - low) / 2;
-            if ((mid > 0 && nums[mid] > nums[mid - 1]) && (mid < nums.length - 1 && nums[mid] > nums[mid + 1])) {
-                return mid;
-            }
-            if (mid > 0 && nums[mid] < nums[mid - 1]) {
+            if (mid + 1 < nums.length && nums[mid] > nums[mid + 1]) {
                 high = mid;
             } else {
                 low = mid + 1;
