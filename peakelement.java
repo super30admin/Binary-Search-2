@@ -7,7 +7,7 @@ class Solution {
         Solution s=new Solution();
         int nums[]={1,2,1,3,5,6,4};
         int peak= s.findPeakElement(nums);
-        System.out.println("the peak is: ",p);
+        System.out.println("the peak is: "+peak);
     }
     
     public int findPeakElement(int[] nums) {
