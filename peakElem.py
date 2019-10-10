@@ -1,8 +1,9 @@
 # Couldn't find the solution for when there is no peak Eg : [8,7,5,2,5,7,8]
+# Didn't understand meaning of nums[-1] = nums[n] = -∞
 # Curious about the case where nums[i] == nums[i+1]
 # Time com : O(logn) Space Com : O(1)
 # No leetcode link to run the code
-# Didn't understand meaning of nums[-1] = nums[n] = -∞
+
 
 class Solution:
     def findPeak(self,nums):
