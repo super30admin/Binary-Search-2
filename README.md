@@ -1,6 +1,6 @@
 # Binary-Search-2
 
-## Problem 1:
+## Problem 1: (https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 Given an array of integers nums sorted in ascending order, find the starting and ending position of a given target value.
 
@@ -17,7 +17,7 @@ Example 2:
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
 
-## Problem 2:
+## Problem 2: (https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
@@ -35,7 +35,7 @@ Example 2:
 Input: [4,5,6,7,0,1,2]
 Output: 0
 
-## Problem 3:
+## Problem 3: (https://leetcode.com/problems/find-peak-element/)
 A peak element is an element that is greater than its neighbors.
 
 Given an input array nums, where nums[i] ≠ nums[i+1], find a peak element and return its index.
