@@ -12,7 +12,7 @@ class Solution {
             int mid = low + (high - low)/2;
 
             if(a[mid] == target)
-                if(mid == low || a[mid - 1] < a[mid])
+                if(a[mid - 1] < a[mid])
                     return mid;
                 else
                     high = mid - 1;
@@ -32,7 +32,7 @@ class Solution {
             int mid = low + (high - low)/2;
 
             if(a[mid] == target)
-                if(mid == high|| a[mid + 1] > a[mid])
+                if(a[mid + 1] > a[mid])
                     return mid;
                 else
                     low = mid + 1;
