@@ -25,7 +25,8 @@ class Solution(object):
                 else:
                     if nums[mid] > target:
                         high = mid -1
-                    low = mid+1
+                    else:
+                        low = mid+1
             return -1
         def last(nums,low,high,target):
             while low<= high:
@@ -37,8 +38,9 @@ class Solution(object):
                 else:
                     if nums[mid] > target:
                         high = mid -1
-                    low = mid+1
+                    else:
+                        low = mid+1
             return -1
         left = first(nums,0,len(nums)-1,target)
         right = last(nums,0,len(nums)-1,target)
-        return(left,right) if left <= right else [-1,-1]
+        return(left,right) 
