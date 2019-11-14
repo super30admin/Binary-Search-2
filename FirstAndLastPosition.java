@@ -1,5 +1,5 @@
 /*package whatever //do not write package name here */
-// Time Complexity :O(n)
+// Time Complexity :O(logn)
 // Space Complexity :constant
 // Did this code successfully run on Leetcode :Yes
 // Any problem you faced while coding this :No
