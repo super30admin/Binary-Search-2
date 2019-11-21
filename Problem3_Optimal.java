@@ -1,5 +1,5 @@
 /*
-LeetCode Submitted = No passing (38/59) test cases (Some Bug is there and not spent much time on it; will try after class again)
+LeetCode Submitted = YES
 Time complexity = O(logN)
 Space complexity = O(1) */
 /* The approach I used is assume the middle of the array is peak and then recursively call the left part of the array and right part of the array to see the peak still valid otherwise update peak with another value 
