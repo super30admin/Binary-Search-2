@@ -8,13 +8,15 @@ class Solution(object):
         left ,right = 0, len(nums) - 1
         while left <= right:
             mid = left + (right - left) // 2
-
+            print(left, mid, right)
             # base condition 1. if we reach the end indexes
-            if left == len(nums) - 1 or right == 0:
+            if left == right:
+                # print('Here')
                 return mid
 
             # base condition 2. if our mid is at peak
-            elif nums[mid] > nums[mid + 1] and nums[mid] > nums[mid - 1]: 
+            
+            elif  nums[mid] > nums[mid - 1] and nums[mid] > nums[mid + 1] : 
                 return mid
 
             elif nums[mid+1] > nums[mid]:
@@ -30,8 +32,8 @@ nums2 = [1,2,3,4]
 ans2= [3]
 nums3 = [4,3,2,1]
 ans3 = [0]
-nums4 = [0,1,2,3,1]
-ans4 = [3]
+nums4 = [0,1]
+ans4 = [1]
 nums5 = [1,3,2,1,0]
 ans5 = [1]
 obj = Solution()
