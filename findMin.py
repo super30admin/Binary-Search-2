@@ -27,6 +27,9 @@ class Solution(object):
             if nums[mid] > nums[mid + 1]:
                 return nums[mid + 1]
 
+            if nums[mid-1] > nums[mid]:
+                return nums[mid]
+
             # compare with right value
             # if this is true, that means min value lies on the right of mid
             elif nums[mid] > nums[right]:
@@ -35,8 +38,8 @@ class Solution(object):
                 right = mid - 1
 
 nums1 = [4,5,6,-4,-3,-2,-1,0,1,2]
-nums2 = [1,2,3,4, 5]
-nums3 = [5,6,7,8,0]
+nums2 = [1,2,3,4,5]
+nums3 = [5,6,7,8]
 nums4 = [4,-1,0,1,2,3]
 nums = [nums1, nums2, nums3, nums4]
 
