@@ -1,5 +1,5 @@
-// Time Complexity : O(logN) is best cases and O(N) in worst cases.
-// Space Complexity : O(1)
+// Time Complexity : O(logN) in all cases.
+// Space Complexity : O(logN) since recursion
 // Did this code successfully run on Leetcode : Yes and 100% Time 97% Space
 // Any problem you faced while coding this : LeetCode test cases are not much reliable.
 
