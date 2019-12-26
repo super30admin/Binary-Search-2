@@ -1,3 +1,8 @@
+// Time Complexity : O(logN) is best cases and O(N) in worst cases.
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes and 100% Time 97% Space
+// Any problem you faced while coding this : LeetCode test cases are not much reliable.
+
 public class FirstLastOfSortedArray {
         public int[] searchRange(int[] nums, int target) {
             //Base cases
