@@ -1,4 +1,7 @@
-
+// Time Complexity : O(logN).
+// Space Complexity : O(1) since iteration.
+// Did this code successfully run on Leetcode : Yes and 100% Time 100% Space
+// Any problem you faced while coding this : No.
 
 class Solution {
 public int findPeakElement(int[] nums) {
