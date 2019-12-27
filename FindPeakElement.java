@@ -1,5 +1,5 @@
 // Time Complexity : O(logN).
-// Space Complexity : O(1) since iteration.
+// Space Complexity : O(logN) since recursion.
 // Did this code successfully run on Leetcode : Yes and 100% Time 100% Space
 // Any problem you faced while coding this : No.
 
