@@ -32,5 +32,5 @@ class Solution:
 if __name__ == '__main__':
     h = Solution()
     # Sample test case for '''end = mid - 1 '''
-    print(h.findMin([3, 1, 2]))
+    print(h.findMin([3, 0, 2]))
     print(h.findMin([1, 2]))

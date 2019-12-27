@@ -3,25 +3,28 @@ class Solution:
         result = [-1, -1]
         if not nums:
             return result
-        i, j = 0, len(nums) - 1
-        while i < j:
-            mid = (i + j) // 2
+        start = 0
+        end = len(nums) - 1
+        # find left bound
+        while start < end:
+            mid = (start + end) // 2
             if nums[mid] < target:
-                i = mid + 1
+                start = mid + 1
             else:
-                j = mid
-        if nums[i] != target:
+                end = mid
+        if nums[start] != target:
             return result
         else:
-            result[0] = i
-        j = len(nums) - 1
-        while i < j:
-            mid = (i + j) // 2 + 1
+            result[0] = start
+        # find right bound
+        end = len(nums) - 1
+        while start < end:
+            mid = (start + end + 1) // 2
             if nums[mid] > target:
-                j = mid - 1
+                end = mid - 1
             else:
-                i = mid
-        result[1] = j
+                start = mid
+        result[1] = end
         return result
 
 
