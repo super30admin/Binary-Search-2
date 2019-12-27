@@ -22,7 +22,6 @@ class Solution:
             if ((mid == len(nums) - 1 or nums[mid] < nums[mid + 1]) and
                     (mid == 0 or nums[mid] < nums[mid - 1])):
                 return nums[mid]
-            # Important: First we need to do this check Eg: Edge case [2,1]
             # right is sorted, go to left
             elif nums[mid] < nums[high]:
                 high = mid - 1
