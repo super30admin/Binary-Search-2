@@ -1,5 +1,5 @@
 Time Complexity-O(log n)
-Space Complexity-O(n)
+Space Complexity-O(1)
 Did the code run on Leetcode-yes
 
 #include <iostream>
