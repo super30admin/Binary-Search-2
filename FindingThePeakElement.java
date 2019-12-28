@@ -20,7 +20,6 @@ public class FindingThePeakElement {
 		}
 		return -1;
 	}
-
 	public static void main(String[] args) {
 		FindingThePeakElement findingThePeakElement = new FindingThePeakElement();
 		int [] nums = {1,2,1,5,4,6,4};
