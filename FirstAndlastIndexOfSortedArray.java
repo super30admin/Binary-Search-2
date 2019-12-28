@@ -2,7 +2,7 @@ public class FirstAndlastIndexOfSortedArray {
 
 	public int[] searchRange(int[] nums, int target) {
 		if (nums.length == 0 || nums == null) {
-			return new int[] { -1, 1 };
+			return new int[] { -1, -1 };
 		}
 		int left = binarySearchLeft(nums, target);
 		int right = binarySearchRight(nums, target);
@@ -36,7 +36,7 @@ public class FirstAndlastIndexOfSortedArray {
 		while (low <= high) {
 			int mid = low + (high - low) / 2;
 			if (nums[mid] == target) {
-				if (mid == nums.length || nums[mid] < nums[mid + 1]) {
+				if (mid == nums.length-1 || nums[mid] < nums[mid + 1]) {
 					return mid;
 				} else {
 					low = mid + 1;
