@@ -1,6 +1,6 @@
 Time Complexity: O(log n)
 Space complexity: O(n)
-Did the problem run on Leetcode?: Yes
+Did the problem run on Leetcode: Yes
 Problem: 
 Given an array of integers nums sorted in ascending order, find the starting 
 and ending position of a given target value.Your algorithm's runtime complexity 
