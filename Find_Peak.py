@@ -9,13 +9,13 @@ class Solution(object):
     3. Similarly, if mid element is lesser than its right element, then peak occurs somewhere in the right part with the
         same logic.
 
-    --- Solution passed all test cases on Leetcode. 
+    --- Solution passed all test cases on Leetcode.
 
     '''
     def findPeakElement(self, nums):
         """
-        :type nums: List[int]
-        :rtype: int
+        O(logn) Time Complexity
+        O(1) Space Complexity
         """
         low = 0
         high = len(nums) - 1
