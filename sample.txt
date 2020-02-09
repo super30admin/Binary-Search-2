@@ -21,3 +21,24 @@ there may be duplicates avaliable in this case:
 		if yes this is the last index else
 		duplicates are present and need to move to right till we reach to the last index of target
 	2. if not check the base condition and move low and high until we find our target
+
+
+
+
+
+
+
+Find minimum in a rotated sorted array
+
+Time complexity: O(logn)
+Space Complexity: O(1)
+
+1. if there is only element return it
+2. if nums[mid -1] > nums[mid] then return nums[mid]
+3. if nums[mid] > nums[mid-1] then return nums[mid-1] 
+4. min is always present in an unsorted array
+	if nums[low] < nums[mid] --> left side is sorted
+		low = mid +1		//move to right side
+	else 
+		high = mid -1;
+		
