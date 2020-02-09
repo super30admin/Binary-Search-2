@@ -42,3 +42,21 @@ Space Complexity: O(1)
 	else 
 		high = mid -1;
 		
+		
+
+
+
+
+
+
+Find the peak element:
+
+Time Complexity: O(logn)
+Space Complexity: O(1)
+
+Apply binary search, if num[mid] > nums[mid -1] && nums[mid] > nums[mid+1] -- check both the boudary conditions
+			return mid
+		     else either move to right or left, peak is always gonna present in one of the arrays
+		     
+		     
+		
