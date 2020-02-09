@@ -1,0 +1,23 @@
+**Find the first and last position of element in sorted array**
+Time Complexity: O(logN)
+Space Complexity: O(1)
+
+
+Obivously the ans is binary search,
+
+but we will apply binary search seperately to determine the first and last index.
+
+there may be duplicates avaliable in this case:
+{5,7,7,8,8,8,8,10}
+
+**1) Binary Search for first index**
+	1. if mid == target -> check if the nums[mid-1] < nums[mid] || if its the 0th element
+		if yes this is the first index else
+		duplicates are present and need to move to left till we reach to the first index of target
+	2. if not check the base condition and move low and high until we find our target
+	
+**2) Binary serach for last index**
+	1. if mid == target -> check if the nums[mid+1] > nums[mid] || if its the last element
+		if yes this is the last index else
+		duplicates are present and need to move to right till we reach to the last index of target
+	2. if not check the base condition and move low and high until we find our target
