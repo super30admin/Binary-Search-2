@@ -1,6 +1,6 @@
 # Runs on leetcode
-# Time complexity:  O(logN)   93.35 % faster than python sols
-# Memory complexity:  O(1)    100 % less than python sols
+# Time complexity:  O(logN)   
+# Memory complexity:  O(1)   
 
 class Solution:
     def search(self,nums,low,high):
