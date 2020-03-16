@@ -1,7 +1,7 @@
 // Time Complexity : O(logn + logn) => O(logn)
 // Space Complexity : O(logn)  due to the recursive implementation , although by iterative while loop it can be O(1) but i wanted to explore the recursive way also.
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+// Did this code successfully run on Leetcode : Yes Its working
+// Any problem you faced while coding this : Figuring out a way to avoid same value to be overwritten in output.
 
 class FirstLastIndex {
     int[] output ={-1,-1};
