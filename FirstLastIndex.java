@@ -36,10 +36,15 @@ class FirstLastIndex {
     }
     public static void main(String[] args)
     {
-        for(int x:new FirstLastIndex().searchRange(new int[]{1,2,3,3,4}, 3))
+        for(int x:new FirstLastIndex().searchRange(new int[]{5,7,7,8,8,10}, 8))
         {
             System.out.println(x);
         }
+        for(int x:new FirstLastIndex().searchRange(new int[]{5,7,7,8,8,10}, 6))
+        {
+            System.out.println(x);
+        }
+        
     }
 
 }
