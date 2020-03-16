@@ -2,7 +2,7 @@
 // Space Complexity : O(1) since it is iterative binary search.
 // Did this code successfully run on Leetcode : Yes Its working
 // Any problem you faced while coding this : Figuring out thg edge cases
-class Solution {
+class FindMin {
     public int findMin(int[] nums) {
         int l = 0;
         int r = nums.length-1;
@@ -38,5 +38,13 @@ class Solution {
                 r=m-1;
         }
         return -1;
+    }
+    public static void main(String[] args)
+    {
+
+        System.out.println(new FindMin().findMin(new int[]{3,4,5,1,2}));
+        System.out.println(new FindMin().findMin(new int[]{4,5,6,7,0,1,2}));
+    
+        
     }
 }
