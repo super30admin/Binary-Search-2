@@ -1,3 +1,9 @@
+/*
+ * Time Complexity: O(logn)
+ * Space Complexity: O(1)
+ * Any problem faced while coding this:
+ * */
+
 class FirstAndLastPositionOfElement {
     public int[] searchRange(int[] nums, int target) {
         int low = 0, high = nums.length - 1;
