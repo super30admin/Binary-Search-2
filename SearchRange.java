@@ -1,3 +1,5 @@
+//time complexity - O(log n) - Modifying binary search
+//space cost - constant
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int[] result = new int[2];
