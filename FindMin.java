@@ -1,3 +1,5 @@
+//time complexity - O(log n) - Modifying binary search
+//space cost - constant
 class Solution {
     public int findMin(int[] nums) {
         if(nums == null || nums.length == 0)
