@@ -4,49 +4,57 @@
 // Any problem you faced while coding this : yes, while searching for rightmost index of the element
 
 public class SearchRangeForTargetInSortedArray {
-    public static int[] searchRange(int[] nums, int target) {
+public static int[] searchRange(int[] nums, int target) {
+        int left = leftBS(nums, target);
+        int right = rightBS(nums, target);
 
-        // Edge cases
-        if(nums == null || nums.length == 0){
-            return new int[]{-1,-1};
-        }
+        return new int[]{left, right};
+    }
 
-        // Finding left index
+    private static int rightBS(int[] nums, int target) {
         int low = 0;
         int high = nums.length - 1;
-        while(low < high){
+        while(low <= high){
             int mid = low + (high - low)/2;
-            if(nums[mid] >= target){
-                high = mid;
+
+            if(nums[mid] == target){
+                if((mid == high) || nums[mid+1] != target){
+                    return mid;
+                } else {
+                    low = mid + 1;
+                }
+            } else if(nums[mid] > target){
+                high = mid - 1;
             } else {
                 low = mid + 1;
             }
         }
 
-        // Checking if the target element exists at the found index
-        if(nums[low] != target){
-            return new int[]{-1,-1};
-        }
+        return -1;
+    }
 
-        //Saving low as start index
-        int start = low;
-        high = nums.length - 1;
+    private static int leftBS(int[] nums, int target) {
+        int low = 0;
+        int high = nums.length - 1;
+        while(low <= high){
+            int mid = low + (high - low)/2;
 
-        // Finding right index
-
-        while(low < high){
-            int mid = (low+high)/2 + 1;
-            if(nums[mid] > target){
+            if(nums[mid] == target){
+                if((mid == low) || nums[mid-1] != target){
+                    return mid;
+                } else {
+                    high = mid - 1;
+                }
+            } else if(nums[mid] > target){
                 high = mid - 1;
             } else {
-                low = mid;
+                low = mid + 1;
             }
         }
 
-        int end = low;
-
-        return new int[] {start, end};
+        return -1;
     }
+
 
     public static void main(String args[]){
         int[] arr = new int[]{5,7,7,8,8,10};
