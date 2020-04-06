@@ -20,6 +20,7 @@ class Solution {
             int mid = low + (high - low) / 2;
             int prev = (mid - 1 + nums.length) % nums.length;
             int next = (mid + 1) % nums.length;
+            //if((mid == 0 || nums[mid - 1] <= nums[mid]) && (mid == nums.length - 1 || nums[mid + 1] <= nums[mid]))
             if(nums[prev] <= nums[mid] && nums[next] <= nums[mid])
             {
                 return mid;
