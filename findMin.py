@@ -40,3 +40,34 @@ class Solution:
                     r=mid-1
                     
         return -1
+#Time Complexity=O(log n)
+#Space Complexity=O(1)
+
+
+#Implementing the code withpout using min()
+#1. As usual, calcualte the mid index value by taking low and high index.
+#2. Now check if the mid element is greater then the last element in the array.
+# If yes, this means that we can find smaller elements towards the right of the mid element hence we set our low index to mid+1.
+# If no we set our high index to mid.
+# We return the element present at index of the low index.
+
+
+
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+    #     class Solution:
+    # def search(self, nums: List[int], target: int) -> int:
+        r=len(nums)-1
+        l=0
+        if not nums:
+            return -1
+        
+        while l<r:
+            mid=l+(r-l)//2
+            if nums[mid]<nums[r]:
+                r=mid
+            else:
+                l=mid+1
+                    
+        return nums[l]
