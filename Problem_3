@@ -1,7 +1,7 @@
 /**
 Find any peak element.
-Time Complexity : 
-Space Complexity : 
+Time Complexity : O(log(n))
+Space Complexity : O(1)
 Algorithm : 
 1. Apply binary search to find element
 2. Once found mid, check if its neighbours are less than mid. If not then move to the side which has greater element. 
