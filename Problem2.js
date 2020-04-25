@@ -2,6 +2,9 @@
 
 // Time Complexity : O(log(n))
 // Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+
+//------------------------------------------------------------
 
 // Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
