@@ -1,3 +1,5 @@
+#Time Complexity : OLOGN
+#Space Complexity: O(1)
 class Solution(object):
     def findMin(self, nums):
         """
