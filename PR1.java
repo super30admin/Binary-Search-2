@@ -7,7 +7,7 @@
 */
 
 
-class Solution {
+class PR1 {
     public int[] searchRange(int[] nums, int target) {
         if(nums.length<1) return new int[] {-1,-1};
           return BinarySearch(nums,0,nums.length-1,target);
