@@ -1,6 +1,6 @@
 // Time Complexity :O(log n)
-// Space Complexity :o(1) As array is not an Auxiliary  space
-// Did this code successfully run on Leetcode : N/A
+// Space Complexity :O(1) As array is not an Auxiliary  space
+// Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : -
 class Solution {
     public int findMin(int[] nums) {
