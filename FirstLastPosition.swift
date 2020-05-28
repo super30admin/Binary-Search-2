@@ -1,3 +1,5 @@
+//Not working for all test cases
+
 class Solution {
   func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
 
