@@ -2,56 +2,51 @@
 # Space Complexity : O(1)
 # Did this code successfully run on Leetcode : Yes!
 # Any problem you faced while coding this : I had trouble with understanding
-# the concept but it was easier to code the solution after the session
+# the concept but it was easier to code the solution after the session.
 
 # Your code here along with comments explaining your approach
 class Solution(object):
+    # if array empty return [-1, -1]
+    # else perform 2 binarySearches to find start and end index
     def searchRange(self, nums, target):
-        # if array empty return [-1, -1]
         if(len(nums) == 0):
             return [-1, -1]
-        # binary search to find start index
         start = self.binarySearchLeft(nums, target, 0, len(nums)-1)
-        # binary search to find end index
         end = self.binarySearchRight(nums, target, 0, len(nums)-1)
         return [start, end]
 
+    # if target at mid
+    #       check for first occurrence if yes return mid
+    #       else another occurrence before mid, bring right = mid - 1
+    # else check for first occurrence in either right or left array and adjust pointers accordingly
     def binarySearchLeft(self, nums, target, left, right):
         while left <= right:
             mid = left + (right - left) / 2
-            # if target at mid
             if nums[mid] == target:
-                # check if mid is the first occurrence of the target
                 if mid == 0 or nums[mid] > nums[mid-1]:
                     return mid
-                # else there is another occurrence of target
-                # before mid index, search in left array.
                 else:
                     right = mid - 1
-            # else if first occurrence of target in left array
             elif nums[mid] > target:
                 right = mid - 1
-            # else first occurrence of target in right array
             else:
                 left = mid + 1
         return -1
 
+    # if target at mid
+    #       check for last occurrence if yes return mid
+    #       else another occurrence after mid, bring low = mid + 1
+    # else check for last occurrence in either right or left array and adjust pointers accordingly
     def binarySearchRight(self, nums, target, left, right):
         while left <= right:
             mid = left + (right - left) / 2
-            # if target at mid
             if nums[mid] == target:
-                # check if mid is the last occurrence of the target
                 if mid == len(nums)-1 or nums[mid] < nums[mid+1]:
                     return mid
-                # else there is another occurrence of target
-                # after mid index, search in right array
                 else:
                     left = mid + 1
-            # else if last occurrence of target in left array.
             elif nums[mid] > target:
                 right = mid - 1
-            # else last occurrence of target in right array.
             else:
                 left = mid + 1
         return -1
