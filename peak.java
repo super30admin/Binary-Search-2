@@ -6,15 +6,20 @@ class Solution {
     public int findPeakElement(int[] nums) {
         int start=0;
         int end=nums.length-1;
-        while(start<end)
+        if(nums==null || nums.length==0)
+            return -1;
+        while(start<=end)
         {
             int mid=start+(end-start)/2;
-            if(nums[mid]>nums[mid+1])// if greater then we should look towards its left
-                end=mid;
-            else
-                start=mid+1;//else move towards right
-                
-        }
-        return start;
+            System.out.println(mid);
+            if(mid<nums.length-1 && nums[mid] < nums[mid+1])
+                start=mid+1;
+            else if(mid>0 && nums[mid] < nums[mid-1])
+                end=mid-1;
+            else 
+                return mid;
+            
+        } 
+        return -1;
     }
 }

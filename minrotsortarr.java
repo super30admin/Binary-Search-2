@@ -6,10 +6,8 @@ class Solution {
     public int findMin(int[] nums) {
         if(nums.length==1)
             return nums[0];
-		// as it is rotated there will be two sorted subarrays in the array
-        int left=nums[0]; // getting min element of the first subarray
-        int right=binarySearchRight(nums); // getting the min element of the second sub array for which we dont know the starting index
-        return Math.min(left,right); // whichever is min in both will be returned
+        int min=binarySearchRight(nums);
+        return min;
     }
 
     private int binarySearchRight(int nums[])
