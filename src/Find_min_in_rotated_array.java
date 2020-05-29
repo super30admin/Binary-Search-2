@@ -42,3 +42,35 @@ class Solution {
         return -1;
     }
 }
+
+
+//another approach
+
+class Solution {
+    public int findMin(int[] nums) {
+        int low =0, high = nums.length - 1;
+        
+        if(nums == null || nums.length == 0) return -1;
+        
+        while(low <= high) {
+            int mid = low + (high - low)/2;
+            //if array is sorted then return low
+            if(nums[low] <= nums[high]) return nums[low];
+            
+            //if mid is min (min will be small compared to both neighbors)
+            if((mid == 0 || nums[mid] < nums[mid -1]) && 
+               (mid == nums.length-1 || nums[mid] <nums[mid+1]))
+                return nums[mid];
+            
+            //if right array is sorted, move to the left in unsorted array
+            if(nums[mid] < nums[high]) {
+                high = mid -1;
+            }else {
+            	//else move to the right
+                low = mid + 1;
+            }
+        }
+        return -1;
+    }
+    
+}
