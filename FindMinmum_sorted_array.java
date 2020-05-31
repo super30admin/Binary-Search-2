@@ -1,5 +1,6 @@
 // Time Complexity : O(log(N)) N is size of input
 // Space Complexity : O(1) No Auxilary Array
+//                    O(log(N)) recursive stack space
 // Did this code successfully run on Leetcode : YES
 
 
