@@ -1,4 +1,5 @@
 Time Complexity : O(log n)
+Space Complexity : O(1)
 leetcode : running
 Difficulty While attempting : No
 
