@@ -6,9 +6,9 @@
 # Your code here along with comments explaining your approach
 # 1. Run two binary search for first and last occurrence of target separately
 # 2. In first(), if mid finds target -> check if its greater than it's left neighbor (as it's sorted array) -> if Yes, return mid which is the first occurrence
-                                      -> if Not, then we move to left as the first occurrence of target can only occur before this mid
+#                                    -> if Not, then we move to left as the first occurrence of target can only occur before this mid
 # 3. Similarly in second(), if mid finds target -> check if its less than it's right neighbor (as it's sorted array) -> if Yes, return mid which is the last occurrence
-                                      -> if Not, then we move to right as the last occurrence of target can only occur after this mid
+#                                               -> if Not, then we move to right as the last occurrence of target can only occur after this mid
 
 
 class Solution:
