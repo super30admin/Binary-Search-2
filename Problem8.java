@@ -1,3 +1,16 @@
+// Time Complexity: O(log n)
+
+/*
+Approach:
+    Check if length of arr is greater than 1
+    Check if array is already sorted by comaparing nums[0] with nums[nums.length-1]
+    Find mid element to divide the search space in half.
+    Check if mid is greater than nums[mid+1] - return nums[mid]
+    Similarly, check if nums[mid-1] is greater than nums[mid] - return nums[mid]
+    Check if array is left sorted, if yes the start = mid +1
+    Check if array is right sorted, if yes end = mid -1
+*/
+
 class Solution {
     public int findMin(int[] nums) {
         int start = 0;
