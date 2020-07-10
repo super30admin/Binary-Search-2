@@ -16,4 +16,4 @@ class Solution:
         
         
        #### Time complexity - logn because we dive the array by half and traverse.
-       #### Space complexity - ??
+       #### Space complexity - constant O(1) ### Since elements are constant
