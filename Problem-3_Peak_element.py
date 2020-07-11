@@ -22,7 +22,7 @@ class Solution:
             if (mid == 0 or nums[mid] > nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] > nums[mid + 1]):
                 return mid
             
-            elif nums[mid] < nums[mid + 1]:
+            elif mid + 1 < len(nums) and nums[mid] < nums[mid + 1]:
                 start = mid + 1
                 
             else:
