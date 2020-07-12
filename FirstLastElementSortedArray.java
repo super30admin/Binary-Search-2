@@ -1,7 +1,5 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length - 1;
         int f = getFirstElement(nums, target, 0, nums.length - 1);
         int l = getLastElement(nums, target, 0, nums.length - 1);
         
