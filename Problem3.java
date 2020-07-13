@@ -12,7 +12,11 @@ class Problem3 {
         int high =  nums.length-1;
         
         while(low<high){
+
+            // find mid
             int mid =  low + (high -low)/2;
+
+            // finding pivot
             if(nums[mid] > nums[mid+1])
                 high =  mid;
             else
