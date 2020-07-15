@@ -7,7 +7,7 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
 
-        #to find the first occurence
+        # to find the first occurence
         first = self.firsTarget(nums, target, 0, len(nums) - 1)
         # to find the second occurence
         second = self.secondTarget(nums, target, 0, len(nums) - 1)
@@ -19,22 +19,22 @@ class Solution:
         # loop all elements
         while (left <= right):
 
-            # calculat mid - this way prevents the overflow
+            # calculate mid - this way prevents the overflow
             mid = left + (right - left) // 2
 
-            #If we find target, then we proceed to find whethere it is first occurence
+            # If we find target, then we proceed to find whethere it is first occurence
             if nums[mid] == target:
 
-                #if mid is the first element then obviously it is the first occurence. if the previuos element of the mid is less than target it means no other occurence, so we return mid
+                # if mid is the first element then obviously it is the first occurence. if the previuos element of the mid is less than target it means no other occurence, so we return mid
                 if mid == 0 or nums[mid - 1] < target:
                     return mid
                 else:
-                    #other wise we will make the right move towards the mid so we move towards the previous occurences.
+                    # other wise we will make the right move towards the mid so we move towards the previous occurences.
                     right = mid - 1
 
             else:
 
-                #if element not found we will check if the target is lower or greater, if low we move right, if high we move left
+                # if element not found we will check if the target is lower or greater, if low we move right, if high we move left
                 if nums[mid] > target:
 
                     right = mid - 1
@@ -49,7 +49,7 @@ class Solution:
         # loop all elements
         while (left <= right):
 
-            # calculat mid - this way prevents the overflow
+            # calculatek, mid - this way prevents the overflow
             mid = left + (right - left) // 2
 
             if nums[mid] == target:
