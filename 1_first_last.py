@@ -1,6 +1,8 @@
 # time complexity : O(log(n))
 # space complexity : O(1)
+# working on Leetcode : yes
 
+# binary search for first element
 def binarysearch(arr,l,r,target):
     while (l<=r):
         mid = l + (r-l)//2
@@ -41,7 +43,7 @@ def mainSearch(arr,target):
     return [key1,key2]
 
 
-nums = [8,8,8,8,8,8]
-target = 8
+nums = [1,1,8,8,8,8,8,8]
+target = 2
 
 print(mainSearch(nums,target))
