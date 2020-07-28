@@ -25,7 +25,8 @@ class Solution:
             # If we find target, then we proceed to find whethere it is first occurence
             if nums[mid] == target:
 
-                # if mid is the first element then obviously it is the first occurence. if the previuos element of the mid is less than target it means no other occurence, so we return mid
+                # if mid is the first element then obviously it is the first occurence. if the previuos element of
+                # the mid is less than target it means no other occurence, so we return mid
                 if mid == 0 or nums[mid - 1] < target:
                     return mid
                 else:
