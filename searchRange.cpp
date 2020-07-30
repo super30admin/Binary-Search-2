@@ -1,64 +1,59 @@
-// Time Complexity : Not sure, I think O(n) because of finding min and max elements
-// Space Complexity : I think O(log n)^2 because of n 
+// Time Complexity : O(logn) 
+// Space Complexity : O(1)  
 // Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : Time and space complexities
+// Any problem you faced while coding this : No
 
+// [***] KEY INSIGHT: FIND FIRST INDEX USING BS AND THEN FIND LAST INDEX
 
-// Your code here along with comments explaining your approach
-// 1. Recursive approach to a modified binary search
-// 2. If element not found return -1 but if element is found don't stop when binary search finds a result
-// 3. Recursively call modified binary search for left and right subarrays
+// 1. Finding first index: Find the target using BS and once found see if it is same as left element; if no its the first index
+// 2. If it is same as left then make high=mid-1
+// 3. Repeat similar process to find last index 
 
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        vector<int> result;
-        vector<int> range;
-        result=modifiedBinarySearch(0,nums.size()-1,nums,target);
-        range.emplace_back(*min_element(result.begin(),result.end()));
-        range.emplace_back(*max_element(result.begin(),result.end()));
-        return range;
-    }
-    
-    vector<int> modifiedBinarySearch(int l, int r, vector<int> nums, int target){
-        int mid=binarySearch(l,r,nums,target);
-     
-        vector<int> result;
-        if(mid==-1){
-            result.emplace_back(-1);
-            result.emplace_back(-1);
+        vector<int> result = {-1,-1};
+        if(nums.size() == 0)
             return result;
+        int low = 0, high = nums.size()-1, first=-1, last=-1;
+        while(low<=high){
+            int mid = low+(high-low)/2;
+            if(nums[mid] == target){
+                if(mid-1>=low && nums[mid-1] == target)
+                    high = mid-1;
+                else{
+                    first = mid;
+                    break;
+                }
+            }
+            else{
+                if(target<nums[mid])
+                    high=mid-1;
+                else
+                    low = mid+1;
+            }
         }
-        else
-            result.emplace_back(mid);
+        low = 0; high = nums.size()-1;
+        while(low<=high){
+            int mid = low+(high-low)/2;
+            if(nums[mid] == target){
+                if(mid+1<=high && nums[mid+1] == target)
+                    low = mid+1;
+                else{
+                    last = mid;
+                    break;
+                }
+            }
+            else{
+                if(target<nums[mid])
+                    high=mid-1;
+                else
+                    low = mid+1;
+            }
+        }
         
-        vector<int> left = modifiedBinarySearch(l,mid-1,nums,target);
-        vector<int> right = modifiedBinarySearch(mid+1,r,nums,target);
-        
-        if(left[0]!=-1){
-            for(auto i:left)
-                result.emplace_back(i);
-        }
-            
-        if(right[0]!=-1){
-            for(auto i:right)
-                result.emplace_back(i);
-        }
-     
+        result[0] = first;
+        result[1] = last;
         return result;
-    }
-    
-    int binarySearch(int l, int r, vector<int> nums, int target){
-     
-        while(l<=r){
-            int mid = l+(r-l)/2;
-            if(nums[mid]==target)
-                return mid;
-            else if(target<nums[mid])
-                r=mid-1;
-            else
-                l=mid+1;
-        }
-        return -1;
     }
 };
