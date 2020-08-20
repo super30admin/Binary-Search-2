@@ -1,3 +1,10 @@
+//Time Complexity : O(log n)
+//Space Complexity : O(n)
+//Did this code successfully run on Leetcode : yes
+//Any problem you faced while coding this :
+//there are several occasions where manipulating start and end element was a problem.
+//how to make the solution work using one-stack only to avoid extra stack.
+
 class Solution {
 	public int[] searchRange(int[] nums, int target) {
 		// Map<Integer, Integer> nuMap = new HashMap<Integer, Integer>();
