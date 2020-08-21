@@ -7,7 +7,7 @@
 // Your code here along with comments explaining your approach
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        def binarysearchleft(low,high,target,nums):
+        def binarysearchleft(low,high,target,nums): #binary search for the left most index of target
             while low<=high:
                 
                 mid=low+(high-low)//2
@@ -24,7 +24,7 @@ class Solution:
                     low=mid+1
                     
             return -1
-        def binarysearchright(low,high,target,nums):
+        def binarysearchright(low,high,target,nums): # binary search for the right most index of target
             while low<=high:
 
                 mid=low+(high-low)//2
@@ -46,4 +46,4 @@ class Solution:
         right=len(nums)-1
         first=binarysearchleft(left,right,target,nums)
         last=binarysearchright(left,right,target,nums)
-        return [first,last]
+        return [first,last] # returning answer of array of left and right.
