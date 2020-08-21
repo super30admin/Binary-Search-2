@@ -1,3 +1,5 @@
+// Time Complexity: O(logn)
+// Space Complexity: O(1)
 public class FindPeakElementInArray {
     public static int findPeakElement(int[] nums) {
         // int max = nums[0], index = 0;
