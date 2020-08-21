@@ -1,3 +1,20 @@
+
+// Time Complexity : O(log n)
+// Space Complexity : No extra space
+
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this :
+Runtime Error Message:
+java.lang.ArrayIndexOutOfBoundsException: Index -1 out of bounds for length 1
+  at line 22, Solution.firstOccurence
+  at line 3, Solution.searchRange
+  at line 54, __DriverSolution__.__helper__
+  at line 87, __Driver__.main
+  
+  - (changed OR conditon on line 39 & 62. It breaks if mid ==low is writte later as || condition is false then).
+
+// Your code here along with comments explaining your approach
+
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int first = firstOccurence(nums, target);
