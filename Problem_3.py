@@ -1,3 +1,5 @@
+# 162. Find Peak Element
+
 # Approach: We use Binary search to search elements faster 
 
 class Solution:
