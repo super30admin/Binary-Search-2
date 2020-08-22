@@ -1,4 +1,12 @@
-
+    /*  Explanation
+    Time Complexity for operators : log(n)
+    Extra Space Complexity for operators : o(1) .. No extra space
+    Did this code successfully run on Leetcode : Yes
+    Any problem you faced while coding this : No
+    Minimum in sorted array means it's previous element is higher and next element is loweer than the minnium element itself
+    The implemntation consists dividing array and then compare an element with previous and next element. If condition matches then return itself.
+    else compare  mid and high if mid is greater then go towards right else go towards left.
+    */
 
 public class findmininRotatedSortedArray{
     public static void main(String args[]){
