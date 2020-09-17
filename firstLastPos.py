@@ -2,6 +2,7 @@ def searchRange(self, nums: List[int], target: int) -> List[int]:
         """
         keywords: sorted and log(n)
         Follow Binary search and start search from mid.
+        Base case: 2 elements in array
         """
         left, right = 0, len(nums)-1
         res = []
