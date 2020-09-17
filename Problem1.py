@@ -12,14 +12,14 @@ class Solution:
             
             mid = left + (right - left) // 2
             
-            if nums[left] == target and nums[right] == target:
+            if nums[left] == target and nums[right] == target:         # Checking if both left and right indexes have target, if yes, return them
                 return [left, right]
             elif nums[mid] < target:
                 left = mid + 1
             elif nums[mid] > target:
                 right = mid - 1
-            else:
-                if nums[left] != target:
+            else:                                                       # if mid is target and left or right are not target number index
+                if nums[left] != target:                                # Since this can be only possible for < 2 number of times, we can linearly increase left and decrease right
                     left += 1
                 if nums[right] != target:
                     right -= 1
