@@ -18,3 +18,8 @@ class Solution:
 
         left, right = binarySearchLeft(nums, target), binarySearchRight(nums, target)
         return (left, right) if left <= right else [-1, -1]
+    
+    
+    
+    #tc ---o(logn)
+    #sc --- o(1)
