@@ -1,5 +1,7 @@
-# Ran on Leetcode - No
+# Time complexity - O(logn)
+# Space complexity - O(1)
 
+# Ran on Leetcode - Yes
 
 
 class Solution:
@@ -15,11 +17,13 @@ class Solution:
             if nums[mid] >= nums[left] and nums[mid] <= nums[right]:
                 
                 return nums[left]
-            
-            if nums[mid] >= nums[left]:
-                # left is sorted
-                left = mid 
+        
                 
             elif nums[mid] <= nums[right]:
                 right = mid 
+                
+            elif nums[mid] >= nums[left]:
+                left = mid + 1
+                
+            
             
