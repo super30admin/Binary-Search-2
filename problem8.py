@@ -20,5 +20,5 @@ class Solution:
                 right = mid-1
                 
         
-        tc --> o(logn)
-        sc --> o(1)
+       #tc ---o(logn)
+       #sc --- o(1)
