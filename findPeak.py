@@ -13,8 +13,11 @@ class Solution:
             
             mid = low + (high - low) // 2
             
+            # If mid >= mid + 1, then clearly peak is on the left (mid -> mid + 1, is descending)
             if(nums[mid] >= nums[mid + 1]):
                 high = mid
+            
+            # Else, clearly peak is on the right (mid -> mid + 1, is decreasing so theres at least one peak on the right)
             else:
                 low = mid + 1
                 

@@ -14,7 +14,7 @@ class Solution:
             
             mid = low + (high - low) // 2
             
-
+            # the min element is the only one for which, 
             if(nums[mid] <= nums[mid - 1]):
                 return nums[mid]
             
