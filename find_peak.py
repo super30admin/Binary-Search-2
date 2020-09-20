@@ -1,5 +1,6 @@
 class Solution(object):
     def findPeakElement(self, nums):
+        #Time Complexity : Log(T)
         """
         :type nums: List[int]
         :rtype: int
