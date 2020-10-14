@@ -1,46 +1,37 @@
-class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
-        if nums== None or len(nums)==0:
-            return [-1,-1]
-        
-        leftIdx=self.bSearchL(nums,target)
-        rightIdx=self.bSearchR(nums,target)
-        
-        return [leftIdx,rightIdx]
+"""
+Time Complexity :O(log n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :Nope
 
-    def bSearchL(self,nums,target):
-        low=0
-        high=len(nums)-1
-        while(low<=high):
-            mid=low+(high-low)//2 #python will not have int overflow 
-            print(low,mid,high)
-            if nums[mid]==target:
-                if(mid==low or nums[mid]>nums[mid-1]):
-                    return mid
-                else:
-                    high=mid-1
-            elif(nums[mid]<target):
-                low=mid+1
-            
-            else:
-                high=mid-1
-        return -1
-    
-    def bSearchR(self,nums,target):
-        low=0
-        high=len(nums)-1
-        while(low<=high):
-            mid=low+(high-low)//2 #python will not have int overflow 
-            if nums[mid]==target:
-                if(mid==high or nums[mid]<nums[mid+1]):
-                    return mid
-                else:
-                    low=mid+1
-            elif(nums[mid]<target):
-                low=mid+1
-            
-            else:
-                high=mid-1
-        return -1
-    
+Minimum in rotated sorted array
+"""
+
+
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        if len(nums)==1:
+            return nums[0]
+        left=0
+        right=len(nums)-1
         
+        if nums[left]<nums[right]: #sorted not rotated - first elem<last elem
+            return nums[0]
+        
+        while(left<=right):
+            mid=left+(right-left)//2
+            
+            if nums[mid] > nums[0]: #if mid element is greater than first element, search right side
+                left = mid + 1
+            else:#if mid element is lesser than first element, search left side
+                right = mid - 1
+            
+            #if the mid element is greater than next element, thats where rotation happens so mid+1 element is smallest
+            if nums[mid] > nums[mid + 1]:
+                return nums[mid + 1]
+            #if the mid element is less than previous element, mid is smaller
+            if nums[mid-1] > nums[mid]:
+                return nums[mid]
+            
+            
+            
