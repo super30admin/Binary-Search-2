@@ -1,28 +1,41 @@
-//Time complexity:O(n)
+//Time complexity:O(logn)
 //Space complexity:O(1)
 // Leetcode perfect execution:yes
 
 class Solution {
     public int findMin(int[] nums) {
         
-        if(nums==null || nums.length==0) return -1;
-        if(nums.length==1)
+        if(nums==null || nums.length==0)return -1;
+        int lo=0;
+        int hi=nums.length-1;
+        while(lo<=hi)
         {
-            return nums[0];
-        }
-        
-        int ele=nums[0];
-        int lo=1;
-        int hi=nums.length;
-        for(int i=1;i<nums.length;i++)
-        {
-            if(ele>nums[i])
+            int mid=lo+(hi-lo)/2;
+            
+            if(nums.length==1)
             {
-                return nums[i];
+                return nums[0];
             }
-            ele=nums[i];
+            if(  mid!=hi && nums[mid]>nums[mid+1] )
+            {
+                    return nums[mid+1];
+            }
+                
+             if((mid==hi && nums[mid]<nums[mid-1]))
+                {
+                    return nums[mid];
+               }
+            
+                
+            if(nums[mid]>=nums[lo])
+            {
+                 lo=mid+1;
+            }
+            else 
+            {
+                 hi=mid;
+            }
         }
-    
         return nums[0];
       
     }
