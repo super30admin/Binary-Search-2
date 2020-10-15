@@ -7,11 +7,10 @@ Any problem you faced while coding this :No
 
 
 Your code here along with comments explaining your approach
-As this array is sorted and pivoted at a point, we will divide the array in 2 parts, if mid is greater than 
-the mid[low], that means minimum is not in that part, so we do low=mid+1 and if mid is less than high, that
-means minimum is not in that subarray, so we do high=mid-1
-Also, at every mid point we check its left and right value. If right value is low, that is the 
-minimum, if left is higher than mid, mid is the minimum.
+For this question, we do our normal binary search, we check if the array is already sorted, then low is returned
+as minimum. Then we find the mid, if low<mid, that means minimum is in the other part and vice versa. 
+Also, at every mid, we check if it is lower than its neighbors, if yes, it is the minimum
+and we return it
 """
 
 
@@ -23,19 +22,15 @@ class Solution(object):
         """
         if not nums:
             return None
-        if len(nums) == 1:
-            return nums[0]
         low = 0
         high = len(nums)-1
-        if nums[high] > nums[low]:
-            return nums[0]
         while low <= high:
+            if nums[high] > nums[low]:
+                return nums[low]
             mid = low + (high-low)//2
-            if nums[mid] > nums[mid+1]:
-                return nums[mid+1]
-            elif nums[mid] < nums[mid-1]:
+            if ((mid == len(nums)-1) or (nums[mid] < nums[mid+1])) and ((mid == 0) or (nums[mid] < nums[mid-1])):
                 return nums[mid]
-            if nums[mid] > nums[low]:
+            if nums[mid] >= nums[low]:
                 low = mid+1
             else:
                 high = mid-1
