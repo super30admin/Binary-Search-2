@@ -7,8 +7,6 @@ Applying BS:
     If both neighbours are greater, move to either side
 
 Time Complexity : O(logN)
-N: when finding the window
-M: no. of elements in the window. (The one to which we apply Binary Search)
 Space Complexity : O(1)
 Did this code successfully run on Leetcode : Yes
 Any problem you faced while coding this : Did not considered boundary conditions
