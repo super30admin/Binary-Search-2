@@ -22,20 +22,20 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-
+        
         low = 0
         high = len(nums) - 1
-
+        
         if nums == None or len(nums) == 0:
             return -1
         while low <= high:
-            mid = low + (high - low) / 2
-
-            if (mid == low or nums[mid] > nums[mid - 1]) and (mid == high or nums[mid] > nums[mid + 1]):
+            mid = low + (high-low) / 2
+            
+            if (mid == low or nums[mid] > nums[mid-1]) and (mid == high or nums[mid] > nums[mid+1]):
                 return mid
-            elif mid > 0 and nums[mid] < nums[mid - 1]:
-                high = mid - 1
-            else:
+            elif mid !=high and nums[mid]<nums[mid+1]:
                 low = mid + 1
+            else:
+                high = mid - 1
         return -1
-
+                
