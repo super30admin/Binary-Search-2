@@ -1,3 +1,11 @@
+# Time complexity: O(log(n))
+# Space Complexity: O(1) 
+# Approach: We call 2 methods for searching first and last occurence.
+# For first occurence, we check if nums[mid] == target, if so, nums[mid]> nums[mid-1] means it should be the first and return that index, else it must be last or
+# some other ocurrence so decrement high pointer. If target is > nums[mid], means we need to search other sublist (low = mid+1) else high = mid-1, and we haven't 
+# reach to any occurence yet. 
+# And vice-versa for last occurence. If don't find that element only return -1.
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         if len(nums)==0:
