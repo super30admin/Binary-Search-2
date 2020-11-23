@@ -1,7 +1,5 @@
-#include <iostream>
-#include <vector>
 
-using namespace std;
+// Find preak element  ##Problem3
 
 class Solution {
 public:
@@ -25,15 +23,13 @@ public:
     }
 };
 
-int main()
-{
 
-    Solution s;
-    vector <int> v ={1,2,1,3,5,6,4};
+/*
+Compelxity Analysis:
 
-//   for (auto it = v.begin(); it != v.end(); ++it)
-      cout << " Peak element is :"<<s.findPeakElement(v)  << endl;
-
-   return 0;
-}  
-
+Time Complexity: O(Logn).
+Where n is the number of elements in the input array. In each step our search becomes half. So it can be compared to Binary search, So the time complexity is O(log n)
+Space complexity: O(1).
+No extra space is required, so the space complexity is constant.
+*/
+ 
