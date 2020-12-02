@@ -55,3 +55,6 @@ public class firstAndLast34 {
 
 	}
 }
+
+// Time Complexity O(n)
+// Space Complexity O(n)
