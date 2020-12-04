@@ -56,5 +56,6 @@ public class firstAndLast34 {
 	}
 }
 
-// Time Complexity O(n)
-// Space Complexity O(n)
+//. Time Complexity : O(log n)
+// Space Complexity : O (1)
+
