@@ -27,3 +27,5 @@ public class findMinRotatedArray153 {
 	}
 
 }
+// Time complexity : O(log n )
+// Space Complexity : O (1)
