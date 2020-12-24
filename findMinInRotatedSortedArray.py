@@ -2,7 +2,8 @@
 # Space Complexity : O(1).. didn't use extra space
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : No. Just had to figure out 
-# the logic (rotated array type question) which was discussed in previous class. Took awhile but I got it
+# the logic (rotated array type question) which was discussed in previous class. Took awhile but 
+# I got it after drawing out a few examples.
 
 # Your code here along with comments explaining your approach
 
