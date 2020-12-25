@@ -1,3 +1,8 @@
+// time complexity: O(logn) 
+// space comp: O(1);
+//leetcode: yes
+
+
 public class FindMinSortedArray {
 
 

@@ -1,3 +1,9 @@
+// time complexity: O(logn) 
+// space comp: O(1);
+//leetcode: yes
+
+
+
 class Peak {
      public int findPeakElement(int[] nums) {
         
