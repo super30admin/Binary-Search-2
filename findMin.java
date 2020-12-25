@@ -1,3 +1,11 @@
+// Time Complexity : O(log(n))
+// Space Complexity : O(1) -> contant space
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : NO
+
+
+// Your code here along with comments explaining your approach
+
 class findMinRotatedArray {
     public int findMin(int[] nums) {
         
