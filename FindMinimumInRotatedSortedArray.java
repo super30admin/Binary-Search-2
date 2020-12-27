@@ -1,3 +1,6 @@
+//TC - O(log n) where n is number of elements in array.
+//SC - O(1)
+
 class Solution {
     public int findMin(int[] nums) {
        if(nums == null || nums.length == 0) return -1;
