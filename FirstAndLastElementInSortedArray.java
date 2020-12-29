@@ -1,3 +1,6 @@
+//TC = O(log n) where n is number of elements in array.
+//SC = O(1)
+
 class Solution {
     private int binarySearchFirst(int[] nums, int target){
         int low = 0;
