@@ -1,4 +1,4 @@
-# Binary-Search-2
+#Updated Binary-Search-2
 
 ## Problem 1: (https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 #LC -> 34
