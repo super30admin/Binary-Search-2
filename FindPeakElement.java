@@ -1,3 +1,6 @@
+//TC = O(log n) where n is number of elements in array.
+//SC = O(1)
+
 class Solution {
     public int findPeakElement(int[] nums) {
         int l = 0, r = nums.length - 1;
