@@ -1,6 +1,8 @@
 class Solution {
     public int[] searchRange(int[] nums, int target) {
+        //first find start index using binary search
         int start = startIndex(nums,target);
+        //then find end index using binary search
         int end = endIndex(nums,target);
         int[] arr = {start,end};
         return arr;
