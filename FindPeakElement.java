@@ -1,5 +1,5 @@
-T: O(logN)
-S: O(1)
+//T: O(logN)
+//S: O(1)
 class FindPeakElement{
     public int findPeakElement(int[] nums) {
 

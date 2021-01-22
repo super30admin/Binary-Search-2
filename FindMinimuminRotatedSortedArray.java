@@ -1,3 +1,5 @@
+//T: O(logN)
+//S: O(1)
 class Solution {
     public int findMin(int[] nums) {
 
