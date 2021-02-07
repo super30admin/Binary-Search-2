@@ -55,3 +55,40 @@ class Solution {
         return -1;
     }
 }
+
+
+
+// Better code structure
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        if( nums == null || nums.length == 0)
+            return new int[]{-1,-1};
+        int first = findPosition(nums, target, 0, nums.length - 1, true);
+        int last = findPosition( nums, target, 0, nums.length - 1, false);
+        return new int[]{first, last};
+    }
+    
+    private int findPosition( int[] nums, int target, int low, int high, boolean firstPosition) {
+        while(low <= high) {
+            int mid = low + (high - low)/2;
+            if(nums[mid] == target && firstPosition) {
+                if(mid == 0 || nums[mid] > nums[mid - 1])
+                    return mid;
+                else
+                    high = mid - 1;
+            }
+            else  if(nums[mid] == target && !firstPosition ) {
+                if( mid == nums.length - 1 || nums[mid + 1] > nums[mid])
+                    return mid;
+                else
+                    low = mid + 1;
+            }
+            else if (nums[mid] > target)
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+        return -1;
+    }
+}
