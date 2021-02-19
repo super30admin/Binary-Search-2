@@ -1,3 +1,7 @@
+//Time complexity: O(log(n))
+//Space complexity: O(1)
+//compiled in leetcode.
+
 class Solution {
     int max = Integer.MIN_VALUE;
     int min = Integer.MAX_VALUE;
@@ -29,15 +33,15 @@ class Solution {
             if(l>r)
                 return;
             int mid= l+(r-l)/2;
-            if(nums[mid]>target)
+            if(nums[mid]>target)				//if target is less than mid disregarding second part.
             {
                 r = mid-1;
             }
-            else if(nums[mid]<target)
+            else if(nums[mid]<target)			//if target is greater than mid disregarding first part.
             {
                 l = mid+1;
             }
-            else
+            else								// min and max will be set and calling left and right parts for binary search again.
             {
                 if(mid >= max)
                 {
