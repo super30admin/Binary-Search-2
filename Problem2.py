@@ -1,3 +1,4 @@
+#time complexity - O(log n ) -  modification of binary search
 def findMin(nums) -> int:
     low, high = 0, len(nums)-1
     while(low <= high):
@@ -16,4 +17,4 @@ print(findMin([1]))
 print(findMin([1,2]))
 print(findMin([2,1]))
 print(findMin([1,2,0]))
-print(findMin([4,5,6,7,0,1,2]))
+print(findMin([4,5,6,7,0,1,2])
