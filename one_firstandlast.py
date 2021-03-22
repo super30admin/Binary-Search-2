@@ -29,5 +29,5 @@ print(my_range.searchRange([5,8,8,9,10,11],8))
 
 '''
 Time complexity O(log(n)) - n is the number of elements in array
-space complexity O(n) - n is the number of elements in array
+space complexity O(1) 
 '''
