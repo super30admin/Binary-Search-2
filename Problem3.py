@@ -14,7 +14,7 @@ class Solution:
             if ((mid == low or nums[mid] > nums[mid - 1]) and (mid== len(nums)-1 or nums[mid]> nums[mid+1])):
                 return mid
             
-            elif (mid> low and nums[mid]< nums[mid-1]):
+            elif (mid> low and nums[mid]< nums[mid-1]): # mid>low -> because mid could go to 0 or low values than 0 .but we do not need case of mid<len(nums)-1 or high as mid could never go beyond high in binary search
                 high = mid-1
             else:
                 low = mid +1
