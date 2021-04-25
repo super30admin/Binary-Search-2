@@ -22,9 +22,9 @@ class Solution {
                         low = mid+1;
                     }
                 }else if(nums[mid]<target){
-                    low = low+1;
+                    low = mid+1;
                 }else{
-                    high = high -1;
+                    high = mid -1;
                 }
             }
         }
