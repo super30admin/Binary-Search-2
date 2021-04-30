@@ -1,4 +1,6 @@
 """
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
 Method 1: Iterate from starting of index to get first occurrence of target. Iterate from end to get index of last
 occurrence of target --> O(n) + O(n)
 Method 2: Iterate through array to check if target is present and store the index of its first occurrence. Update index
@@ -21,7 +23,7 @@ Edge cases:
 3. If target < low or target > high, stop.
 
 
-Runtime Complexity: O(logn) + O(logn)
+Runtime Complexity: O(logn) + O(logn) = O(2logn) = O(logn)
 Space Complexity: O(1)
 
 Yes, it ran on leetcode
