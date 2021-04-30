@@ -16,7 +16,7 @@ pointer to the element and side greater than the mid. Repeat till you find peak 
 **If both neighbors of element are greater than it, move any side as we are not constrained with the maximum peak.**
 
 
-Runtime Complexity: O(logn)\
+Runtime Complexity: O(logn)
 Space Complexity: O(1)
 
 Yes, it ran on leetcode.
@@ -46,3 +46,6 @@ class Solution:
                 # cannot be last element
                 low = mid + 1
         return -1
+
+# obj = Solution()
+# print(obj.findPeakElement([1,2]))
