@@ -1,3 +1,16 @@
+# Space Complexity : O(1)
+# Time Complexity : O(log N)
+# Did this code successfully run on Leetcode : Y
+# Any problem you faced while coding this : N
+
+
+# Your code here along with comments explaining your approach
+
+# Approach : do binary search and find target, check if previous element of target is also the same element,
+# if not, that is the start index
+# if it is true, assign high pointer to the current target index. This way we search for the first occurance of the target.
+# similar approach is done for the last occurance
+
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         output = {'start': -1, 'end': -1}
