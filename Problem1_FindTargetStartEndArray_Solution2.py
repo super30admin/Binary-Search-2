@@ -52,8 +52,8 @@ class Solution:
 
         return -1
 
-    def binarySearchEnd(self,nums, target):
-        low = 0
+    def binarySearchEnd(self,nums, target, start=0):
+        low = start
         high = len(nums) - 1
 
         while low <= high:
@@ -81,6 +81,6 @@ class Solution:
         if nums[low] > target or nums[high] < target: 
             return [-1, -1]
 
-        end = self.binarySearchEnd(nums, target)
+        end = self.binarySearchEnd(nums, target, start)
 
         return [start, end]
