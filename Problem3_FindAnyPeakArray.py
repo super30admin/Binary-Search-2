@@ -68,6 +68,11 @@ class Solution:
                 if (nums[mid-1] <= nums[mid]) and (nums[mid+1] <= nums[mid]):
                     return mid
                
+                #Always move to greater side. Why?
+                # We are sure that we will find the peak, why?
+                # It already satisfies one condition
+                # If both elements around mid are higher, it doesnt matter
+                # which side we move
                 elif (mid > 0) and (nums[mid-1] > nums[mid]): 
                     high = mid - 1
                 
