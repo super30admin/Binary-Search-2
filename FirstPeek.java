@@ -1,6 +1,7 @@
 // Time Complexity - O(logN)
 // Space Complexity - O(logN)
-// Worked on leetcode successfully : Yes
+// Did this code successfully run on Leetcode : YES
+// Any problem you faced while coding this : NO
 
 // we use binary search to solve this problem.
 // the idea is to compare the middle element with the next element

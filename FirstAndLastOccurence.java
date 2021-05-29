@@ -1,6 +1,7 @@
 // Time Complexity - O(logN)
 // Space Complexity - O(1)
-// Worked on leetcode successfully : Yes
+// Did this code successfully run on Leetcode : YES
+// Any problem you faced while coding this : NO
 
 // we use Binary Search to find the 1st occurence of the target and use the same Binary Search function to find the first occurence of a smallest number greater than target
 class Solution {
