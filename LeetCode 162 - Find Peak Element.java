@@ -1,3 +1,8 @@
+// Time Complexity: Since we use binary search methods here, 
+// so the time complexity will be O(logn).
+/* --------------------------------------------------------*/
+// Space Complexity: the space complexity will be O(1).
+
 class Solution {
     public int findPeakElement(int[] nums) {
         if(nums == null || nums.length == 0)
