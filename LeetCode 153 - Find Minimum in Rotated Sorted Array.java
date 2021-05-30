@@ -1,3 +1,11 @@
+// Time Complexity: Since we use binary search methods here, 
+// so the time complexity will be O(logn).
+/* --------------------------------------------------------*/
+// Space Complexity: the space complexity will be O(1).
+/* --------------------------------------------------------*/
+// I am still confused about the how to consider the boundaries of these kinds 
+// of problems, so that we will not miss any ones?
+
 class Solution {
     public int findMin(int[] nums) {
         if(nums == null || nums.length == 0)
