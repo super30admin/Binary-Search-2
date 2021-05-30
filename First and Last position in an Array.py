@@ -25,7 +25,7 @@ class Solution:
         if output['start'] != -1 and output['end'] != -1:
             return [output['start'], output['end']]
 
-        while low <= high:
+        while low <= high :
             mid = low + (high - low) // 2
             if nums[mid] == target:
                 if mid == 0:
