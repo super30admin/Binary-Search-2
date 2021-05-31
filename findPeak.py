@@ -20,7 +20,21 @@ class Solution:
         #else recursive search for any other ele matching the required condition to its right
         return self.BS(nums,mid+1,right)
         
-    
+    '''
+    def BS(self,nums,left,right):
+
+        mid = left+(right-left)//2
+
+        if (mid==0 or nums[mid-1]<=nums[mid]) and 
+            (mid==n-1 or nums[mid+1]<nums[mid]):
+            return mid
+
+        if nums[mid-1]>nums[mid]:
+            return BS(nums,left,mid-1)
+        else:
+            return BS(nums,mid+1,right)
+    '''
+
     def findPeakElement(self, nums) -> int:
         return self.BS(nums,0,len(nums)-1)
         
