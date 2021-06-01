@@ -20,6 +20,7 @@ class Solution(object):
             while low<= high:
                 mid = low + (high-low)//2
                 if nums[mid] == target:
+                    # checking if the number left of it is less than target
                     if mid == 0 or nums[mid-1]< target:
                         return mid
                     else:
@@ -34,6 +35,7 @@ class Solution(object):
             while low<= high:
                 mid = low + (high-low)//2
                 if nums[mid] == target:
+                     # checking if the number right of it is greater than target
                     if mid == high or nums[mid+1]> target:
                         return mid
                     else:
@@ -44,10 +46,13 @@ class Solution(object):
                     high = mid - 1
             return -1
         
-            
+        
+        # one bin search to search the left pointer
         leftIdx = binSearchLeft(nums,target,0,len(nums)-1)
         if leftIdx == -1:
             return [-1,-1]
+        # one bin search to search the right pointer
+        # reduce search by using left pointer from above as the lower limit
         rightIdx = binSearchRight(nums,target,leftIdx,len(nums)-1)
         
         return [leftIdx,rightIdx]

@@ -1,7 +1,6 @@
 # Array: [1,2,3,4,6,7,8] —>eg [4,5,6,8,9]
 # # Idx:[0,1,2,3,4,5,6]
-# Binary search
-# lf number at the mid is equal to the arr[low] + len(arr)/2, then we can say the 
+# Binary search 
 
 
 arr = [1,2,3,4,5,6,8]
