@@ -68,6 +68,7 @@ class Solution {
         
         int result[] = new int[2];
         
+        // returns the positions through applying binary search.
         result[0]= findLeftPosition(nums,target);
         result[1] = findRightPosition(nums,target);
         
