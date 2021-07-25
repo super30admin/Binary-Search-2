@@ -1,5 +1,6 @@
 //Time Complexity = O(log n)
 //Space Complexity = O(1)
+//To find the element in the rotated sorted array we have to go to the unsorted part of the array.
 class Solution {
 public:
     int findMin(vector<int>& nums) {
