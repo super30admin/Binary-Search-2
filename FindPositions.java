@@ -1,3 +1,7 @@
+// TIME: O(logn)
+// SPACE: O(1)
+// SUCCESS on LeetCode
+
 public class FindPositions {
     private int findBound(int[] nums, int target, boolean first) {
         int start = 0;
