@@ -1,0 +1,25 @@
+// Time Complexity : O(logn)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : 
+
+
+// Your code here along with comments explaining your approach
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        l,r = 0, len(nums)-1
+        while l<r:
+            mid = (l+r)//2
+            
+            if nums[mid] > nums[r]:
+                l = mid+1
+            elif nums[mid] < nums[r]:
+                r=mid
+            else:
+                return nums[r]
+        return nums[l]
