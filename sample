@@ -1,0 +1,105 @@
+Problem 1:
+34. Find First and Last Position of Element in Sorted Array
+
+// Space Complexity :O(1) - constant because we don't initialize any extra memory.
+// Time Complexity : O(logn)- because it's a binary search.
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : Yes, Problem with understanding the question properly
+// and coming up with a solution, and also Syntax error.
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int start = findStart(nums, target);
+        if(start == -1){return new int[] {-1, -1}; } 
+        int end = findEnd(nums, target, start);
+        return new int[] {start, end};    
+    }
+    
+    private int findStart(int[] nums, int target) {
+        int left = 0; //This is the starting index
+        int right = nums.length - 1;
+        int startIndex = -1;
+        while(left <= right) {
+            int midpoint = left + (right - left)/2;
+            if(nums[midpoint] >= target) 
+            {
+                if(nums[midpoint] == target) {
+                    startIndex = midpoint;
+                }
+                right = midpoint - 1;
+            } else {
+                   left = midpoint + 1;                   
+            }
+            
+        }
+            return startIndex;
+    
+}
+    
+    private int findEnd(int[] nums, int target, int start) {
+        int left = start; 
+        int right = nums.length - 1;
+        int endIndex = start;
+        while(left <= right) {
+            int midpoint = left + (right - left)/2; //This prevents integer overflow
+            if(nums[midpoint] <= target) {
+                if(nums[midpoint] == target){ 
+                    endIndex = midpoint;
+                }
+                left = midpoint + 1;
+            } else {
+                    right = midpoint - 1;
+                    
+            }                 
+      }
+      return endIndex;
+   }
+}
+
+problem 2:
+153. Find Minimum in Rotated Sorted Array
+
+// Space Complexity :O(1) - constant because we don't initialize any extra memory.
+// Time Complexity : O(logn)- because it's a binary search.
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : Yes, Problem with understanding the question properly
+// and coming up with a solution, and also Syntax error.
+
+class Solution {
+    public int findMin(int[] nums) {
+        if(nums.length == 0){
+            return -1; //This means the array is empty
+        }
+        if(nums.length == 1){
+            return nums[0];
+        }
+       int left = 0; //The start of the array 
+       int right = nums.length-1; //This is the end of the array
+    
+        while(left < right){
+            int midpoint = left + (right - left)/2; //This prevents integer overflow
+            if(midpoint > 0 && nums[midpoint] < nums[midpoint -1])
+            {
+                return nums[midpoint];
+            }
+            else if (nums[left] <= nums[midpoint]&& nums[midpoint] > nums[right])
+            {
+                left = midpoint + 1;     
+            }
+            else
+            {
+                right = midpoint - 1;
+            }
+        }
+        return nums[left];
+    }
+}
+
+
+problem 3:
+
+// Space Complexity :O(1) - constant because we don't initialize any extra memory.
+// Time Complexity : O(logn)- because it's a binary search.
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : Yes, Problem with understanding the question properly
+// and coming up with a solution, and also Syntax error.
