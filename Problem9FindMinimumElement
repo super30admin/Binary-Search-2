@@ -5,6 +5,7 @@
 
 
 // Your code here along with comments explaining your approach
+<<<<<<< HEAD
 
 /**
  * @param {number[]} nums
@@ -25,3 +26,23 @@ var findMin = function(nums) {
   }
   return nums[left];
 };
+=======
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        l,r = 0, len(nums)-1
+        while l<r:
+            mid = (l+r)//2
+            
+            if nums[mid] > nums[r]:
+                l = mid+1
+            elif nums[mid] < nums[r]:
+                r=mid
+            else:
+                return nums[r]
+        return nums[l]
+>>>>>>> 24c208a88697d35944a7f23b28b6369a7edbb1ee
