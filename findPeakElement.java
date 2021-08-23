@@ -1,3 +1,5 @@
+//Time=O(log(n))
+//Space=O(1)
 public class Solution {
     public int findPeakElement(int[] nums) {
         int l = 0, r = nums.length - 1;
