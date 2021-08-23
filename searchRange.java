@@ -1,3 +1,5 @@
+//Time=O(log(n)) same function with small variation in condn is called twice
+//Space=O(1)
 public class Solution {
 public int[] searchRange(int[] nums, int target) {
     int[] result = new int[2];
