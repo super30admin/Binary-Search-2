@@ -8,17 +8,13 @@ public class Peak {
 
         while (l <= h) {
             int mid = l + (h - l) / 2;
-            // System.out.println(l + "," + h);
-            // System.out.println(mid);
-
-            if (l == h || (nums[mid] > nums[mid - 1] && nums[mid] > nums[mid + 1])) {
+            if ((mid == 0 || (nums[mid] > nums[mid - 1])&&  ( mid == nums.length -1 ||nums[mid] > nums[mid + 1])) {
                 peak = mid;
                 break;
             } else if (nums[mid - 1] > nums[mid] && mid >= 0) {
                 h = mid - 1;
             } else if (nums[mid + 1] > nums[mid] && mid <= h) {
                 l = mid + 1;
-                // System.out.println("l value" + l);
             }
         }
         return peak;
