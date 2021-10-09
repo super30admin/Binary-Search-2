@@ -8,7 +8,7 @@
 // Your code here along with comments explaining your approach
 
 
-class Solution {
+class FindFirstLastPositionElementSortedArray2_34 {
     public int[] searchRange(int[] nums, int target) {
         
         int l=0;

@@ -8,7 +8,7 @@
 // Your code here along with comments explaining your approach
 
 
-class Solution {
+class FindMinimumRotatedSortedArray_153 {
     public int findPeakElement(int[] nums) {
         int l=0;
         int h= nums.length -1;
