@@ -1,6 +1,6 @@
 //Time Complexity - O(log(n))
 //Space Complexity - O(1)
-//Problem ran on leet code
+//Problem ran on leet code successfully
 //No problems faced
 
 #include <iostream>
