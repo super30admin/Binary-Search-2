@@ -8,9 +8,9 @@ def findPeakElement(nums):
     high = length - 1
     while (low <= high):     
         middle = (low + high) // 2
-        if ((middle == 0 or nums[middle - 1] <= nums[middle]) and (middle == length - 1 or nums[middle] >= nums[middle + 1])):
+        if (nums[middle - 1] <= nums[middle]) and (nums[middle] >= nums[middle + 1]):
             return middle
-        elif (middle > 0 and nums[middle - 1] > nums[middle]):
+        elif (nums[middle - 1] > nums[middle]):
             high = middle - 1
         else:
             low = middle + 1
