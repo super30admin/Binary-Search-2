@@ -4,6 +4,7 @@
 // Any problem you faced while coding this : no
 public class FindPeakElement {
         public int findPeakElement(int[] nums) {
+           if(nums == null || nums.length == 0) return -1;
             int l = 0;
             int h = nums.length - 1;
 
