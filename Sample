@@ -1,0 +1,27 @@
+// Time Complexity :O(log n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+//we find if mid is peak, if not we move towards the bigger element than mid as we know we will definitely get the peak in
+//that direction.
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int start = 0;
+		int end = nums.length - 1;
+		
+		while(start<=end) {
+			int mid = start + (end-start)/2;
+			if((mid==0 || nums[mid-1]<nums[mid]) && (mid==nums.length-1 || nums[mid+1]<nums[mid])) {
+				return mid;
+			}else if(nums[mid+1]>=nums[mid]) {
+				start= mid+1;
+			}else {
+				end=mid-1;
+			}
+		}
+		return -1;
+    }
+}

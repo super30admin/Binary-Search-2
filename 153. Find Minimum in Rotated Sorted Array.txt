@@ -1,0 +1,31 @@
+// Time Complexity :O(log n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : No
+
+
+// Your code here along with comments explaining your approach
+//We need to chek the element against pev and next element. I f we found that the element is smaller than both the neighbour that means its the smallest element
+//there are 2 possibilities where mid would be 0 or mid wold be lengh-1 then it wont have either mmi-1 or mid+1 respectively. We need to handle thi situation.
+//We know one thing fo sure which is truth that, smalest element wil definitely be in the unsorted par. So we compare mid with high. if its bigger then thats unsorted part and we move there. else we go to other part.
+
+class Solution {
+    public int findMin(int[] nums) {
+        int start = 0;
+        int end = nums.length-1;
+        
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            
+            if((mid==0 || nums[mid]<nums[mid-1]) && (mid==nums.length-1|| nums[mid]<nums[mid+1])){
+                return nums[mid];
+            }else if(nums[mid]>nums[end]){
+                start=mid+1;
+            }else{
+                end= mid-1;
+            }
+            
+        }
+        return -1;
+    }
+}
