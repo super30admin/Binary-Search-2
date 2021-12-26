@@ -5,7 +5,6 @@ class Solution {
         int high=nums.length-1;
         int mid;
         while(low<=high){
-
             mid=low+(high-low)/2;
             System.out.println("l = " + low +"h= " + high+ " mid = "+mid);
             if(nums[mid]>target){
@@ -21,7 +20,6 @@ class Solution {
                     System.out.println("inside right");
                     low=mid+1;
                 }
-
                 else{
                     return pos;
                 }
