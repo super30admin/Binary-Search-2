@@ -17,6 +17,43 @@ Example 2:
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
 
+class Solution:
+
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        start = self.start_index(nums,target)
+        last = self.last_index(nums,target)
+        return [start,last]
+    
+    def start_index(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        ind = -1
+        while low<=high:
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                ind = mid
+                high = mid-1
+            elif nums[mid]>=target:
+                high = mid-1
+            elif nums[mid]<=target:
+                low = mid+1
+        return ind
+    
+    def last_index(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        ind = -1
+        while low<=high:
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                ind = mid
+                low = mid+1
+            elif nums[mid]>=target:
+                high = mid-1
+            elif nums[mid]<=target:
+                low = mid+1
+        return ind
+
 ## Problem 2: (https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
