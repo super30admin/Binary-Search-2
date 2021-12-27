@@ -20,6 +20,8 @@ Output: [-1,-1]
 class Solution:
 
     def searchRange(self, nums: List[int], target: int) -> List[int]:
+        if len(nums)==0:
+            return [-1,-1]
         start = self.start_index(nums,target)
         last = self.last_index(nums,target)
         return [start,last]
