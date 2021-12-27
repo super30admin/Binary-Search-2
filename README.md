@@ -23,7 +23,7 @@ class Solution:
         if len(nums)==0:
             return [-1,-1]
         start = self.start_index(nums,target)
-        last = self.last_index(nums,target)
+        last = self.last_index(nums,target,start)
         return [start,last]
     
     def start_index(self, nums, target):
@@ -41,8 +41,8 @@ class Solution:
                 low = mid+1
         return ind
     
-    def last_index(self, nums, target):
-        low = 0
+    def last_index(self, nums, target,start):
+        low = start
         high = len(nums)-1
         ind = -1
         while low<=high:
