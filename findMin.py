@@ -26,6 +26,9 @@ compare mid nt to last, which is smaller?
 compare mid to first, smaller
 middle value, no target
 
+Time: OLogN
+Space: O 1
+
 """
 
 class Solution:

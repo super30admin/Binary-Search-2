@@ -1,3 +1,9 @@
+"""
+Time: OLogN
+Space: O1
+
+"""
+
 def findPeakElement(self, nums):
     left = 0
     right = len(nums)-1
