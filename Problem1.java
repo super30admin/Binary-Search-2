@@ -1,7 +1,9 @@
 // Time Complexity: Log(N)
 // Space Complexity: O(1)
+// I was able to run this code successfully on leetcode. However, I was unable to submit it because I was getting a Time Limit Exceded error; 
 //In this approach, we use binary search twice; first to find the starting index and then the second time to find the
 //last index of the given number.
+
 
 class Solution {
    
