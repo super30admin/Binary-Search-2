@@ -1,3 +1,8 @@
+// Time Complexity :O(log(n))
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         return new int [] {Binary_Search_First(nums,target),Binary_Search_Last(nums,target)};       

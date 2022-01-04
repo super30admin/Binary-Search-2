@@ -1,3 +1,8 @@
+// Time Complexity :O(log(n))
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+
 class Solution {
     public int findMin(int[] nums) {
         return Find_minimum(nums,0,nums.length-1);
