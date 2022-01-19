@@ -56,7 +56,7 @@ class Solution:
         def findSecondOccurrence(nums, target):
  
             # set start and end boundry again
-            (left, right) = (0, len(nums) - 1)
+            (left, right) = (result1, len(nums) - 1)
         
            
             result2 = -1
