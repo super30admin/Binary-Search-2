@@ -2,14 +2,13 @@
 //time - O(log(n))
 //Ran on leeetcode successfully : Yes
 // Problem faced  : No
-//Approach : Binary Search, find mid, if mid lies oon the decreasing slop then move end to mid(dont do mid -1 else 'causee mid might be the peak element ')
+//Approach : Binary Search, find mid, if mid lies on the decreasing slop then move end to mid(dont do mid -1 'causee mid might be the peak element ')
        // if mid lies on increasing slop then move start = mid+1
 
 class Solution {
     public int findPeakElement(int[] nums) {
 
       if(nums == null && nums.length == 0) return -1;
-      if(nums.length == 1) return 0;
 
       int start = 0;
       int end = nums.length -1;
@@ -24,7 +23,7 @@ class Solution {
           start = mid + 1;
         }
 
-        if(nums[mid] > nums[mid+1]){
+        else if(nums[mid] > nums[mid+1]){
           end = mid;
         }
       }

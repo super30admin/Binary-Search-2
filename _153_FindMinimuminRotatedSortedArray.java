@@ -3,7 +3,7 @@
       //Ran on leeetcode successfully : Yes
       // Problem faced  : No
     	//Approach : Binary Search, divide array in two halves, if mid to end is soorted move end to mid else move start to mid+1
-       // one special condition is when start and end are one distance apart that time atke min(start, end) 
+       // one special condition is when start and end are one distance apart that time take min(start, end) 
 
 class Solution {
     public int findMin(int[] nums) {

@@ -6,9 +6,9 @@
       //1. Find any occurence of target,
       //2. Find first occurence of target in first half (0 ,mid)
       //3. Find last occurence of target in last half(mid, end)
-      //4. If mid = target then move (end or start) to mid not (mid -1 or mid+1) becasue it may be first or last occurence , wee dont wanna loose import junit.framework.TestCase;
-      //5. Watch out for the condition when (start == mid) that mean start and end aree 1 distance apart and
-      //   return index based on start or end index value  
+      //4. If mid = target then move (end or start) to mid not (mid -1 or mid+1) becasue it may be first or last occurence , we dont wanna loose thee current element
+      //5. Watch out for the condition when (start == mid) that mean start and end are 1 distance apart and
+      //   return index based on start or end index value
 
 class Solution {
     public int[] searchRange(int[] nums, int target) {
