@@ -34,7 +34,7 @@ class Solution:
                 if mid ==len(nums)-1 or nums[mid+1] != target:
                     return mid
                 else:
-                    start = mid -1
+                    start = mid + 1
             elif nums[mid] < target:
                 start = mid+1
             else:
