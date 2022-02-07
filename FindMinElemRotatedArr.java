@@ -1,7 +1,7 @@
 // Time Complexity : O(Log n); as we are splitting till the mid point and choosing direction to search
 // Space Complexity : O(1); except variables not using any extra space.
-// Did this code successfully run on Leetcode : Yes; ()
-// Any problem you faced while coding this : 
+// Did this code successfully run on Leetcode : Yes; (https://leetcode.com/submissions/detail/636462979/)
+// Any problem you faced while coding this : No;
 // My Notes : The idea is everytime you break the arr; you point towards mid and check if it is the pivot elem (if prev elem is less than the current mid). 
 public class FindMinElemRotatedArr {
     public int findMin(int[] nums) {

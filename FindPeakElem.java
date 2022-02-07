@@ -1,7 +1,7 @@
 // Time Complexity : O( Log n) since we are dividing the arr and checking.
 // Space Complexity : O(1) since only extra variables and no other copy of arr is created.
 // Did this code successfully run on Leetcode : Yes; (https://leetcode.com/submissions/detail/636536956/)
-// Any problem you faced while coding this : 
+// Any problem you faced while coding this : No;
 // My Notes : The idea is to move to the direction, where the value is higher, so that there is chance you will find the peak or it might be at the end, 
 // since the end are - infinity, you can return them. If mid reaches start, then check with the rightElem or mid reached end then check with the left Elem.
 class FindPeakElem {
