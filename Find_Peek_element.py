@@ -7,12 +7,18 @@
 
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
-        l, r = 0, len(nums)-1
-        
-        while l<r:
-            m = (l+r)//2
-            if nums[m] < nums[m+1]:
-                l = m+1
+        s, e = 0, len(nums)-1
+        while s<=e:
+            mid = (s+e)//2
+            midGreatThanLeft = mid==0 or nums[mid]>nums[mid-1]
+            midGreatThanRight = mid == len(nums)-1 or nums[mid]>nums[mid+1]
+            
+            if midGreatThanLeft and midGreatThanRight:
+                return mid
+            
+            # Go right if mid greater than Left
+            if midGreatThanLeft: 
+                s = mid+1
             else:
-                r = m
-        return l
+                e = mid-1
+            
