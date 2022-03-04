@@ -35,9 +35,9 @@ class Solution(object):
             return -1
         
 
-        left_element = searchElement(nums, target, True)
+        left_element = searchElement(nums, target, left_bts=True)
         if (left_element == -1):
             return [-1, -1]
 
-        right_element = searchElement(nums, target, False)
+        right_element = searchElement(nums, target, left_bts=False)
         return [left_element, right_element]
