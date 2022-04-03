@@ -51,7 +51,7 @@ namespace ConsoleApp1
                         high = mid - 1;
                     }
                 }
-                else if (target < nums[mid - 1])
+                else if (target < nums[mid])
                 {
                     high = mid - 1;
                 }
@@ -64,7 +64,7 @@ namespace ConsoleApp1
         }
 
 
-
+        WWW
         public int SearchSecondIndex(int[] nums, int target)
         {
             int low = 0;
