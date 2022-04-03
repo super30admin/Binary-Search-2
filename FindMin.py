@@ -21,11 +21,15 @@ class Solution(object):
 
         while(start <= end):
             mid = start + (end-start)//2
+            #  if nums[mid] > nums[mid+1] then pivot starts at mid + 1
             if nums[mid] > nums[mid+1]:
                 return nums[mid+1]
+            # if nums[mid-1] > nums[mid] then pivot starts at mid
             elif nums[mid-1] > nums[mid]:
                 return nums[mid]
+            # if nums[end] < nums[mid] then first half is sorted and second half has the min/pivot
             if nums[end] < nums[mid]:
                 start = mid + 1
+            # if nums[end] > nums[mid] then second half is sorted and first half has the min/pivot
             else:
                 end = mid - 1
