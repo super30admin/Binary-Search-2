@@ -1,3 +1,8 @@
+//Time : O(log n) n is number of array
+//Space : O(1)
+//Solved on Leet code : Yes
+// Approach : Move towards the greater half while performing binary search
+
 class FindPeak {
     public int findPeakElement(int[] nums) {
         int low = 0;
