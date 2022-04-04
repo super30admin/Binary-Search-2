@@ -1,9 +1,5 @@
 # First and last position of element in sorted array 
 
-from re import M
-
-from pyrsistent import m
-
 
 class Solution(object):
     def searchRange(self, nums, target):
@@ -19,24 +15,24 @@ class Solution(object):
         right = self.binarySearch(nums, target, False)
         return [left, right]
 
-        def binarySearch(nums, target, leftBias):
-            l =0
-            r = len(nums)-1
-            i = -1
+    def binarySearch(nums, target, leftBias):
+        l =0
+        r = len(nums)-1
+        i = -1
 
-            while l <= r:
-                mid = l + (r-h) //2
-                if target > nums[mid]:
-                    l = mid+1
-                elif target < nums[mid]:
-                    r = mid-1
+        while l <= r:
+            mid = l + (r-h) //2
+            if target > nums[mid]:
+                l = mid+1
+            elif target < nums[mid]:
+                r = mid-1
+            else:
+                i = m
+                if leftBias:
+                    r = m -1
                 else:
-                    i = m
-                    if leftBias:
-                        r = m -1
-                    else:
-                        l = m + 1
-            return i
+                    l = m + 1
+        return i
 
 
 
