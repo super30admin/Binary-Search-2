@@ -1,7 +1,12 @@
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : No
+/**
+Problem: find minimum in sorted rotated array
+ https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+ 
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+*/
 class Solution {
     public int findMin(int[] nums) {
         int low = 0, high = nums.length - 1;

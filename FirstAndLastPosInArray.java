@@ -1,7 +1,12 @@
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : No
+/**
+Problem: Find first and last position of an element in an array
+https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+*/
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         if (nums == null || nums.length == 0 || target < nums[0] || target > nums[nums.length - 1]) {

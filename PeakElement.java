@@ -1,7 +1,12 @@
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : No
+/**
+problem: find the peak element in an array
+https://leetcode.com/problems/find-peak-element/
+
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : No
+*/
 class Solution {
     public int findPeakElement(int[] nums) {        
         int low = 0, high = nums.length - 1;
