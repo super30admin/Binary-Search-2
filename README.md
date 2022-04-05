@@ -65,4 +65,6 @@ Your solution should be in logarithmic complexity.
 
 // Problem1.java has O(log n) time complexity and space complexity O(1)
 
+// Problem2.java has O(log n) time complexity and space complexity O(1)
+
 // Problem3.java has O(log n) time complexity and space complexity O(1)
