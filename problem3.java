@@ -1,3 +1,5 @@
+//Time Complexity - O(logn)
+//space Complexity - O(1)
 class Solution3 {
     public int findPeakElement(int[] nums) {
         if (nums == null || nums.length == 0) return -1;
