@@ -114,3 +114,43 @@ public:
         return -1;
     }
 };
+
+// search in sorted-array in unknown array size.
+
+
+
+
+class Solution {
+    public int search(ArrayReader reader, int target) {
+     
+int low = 0;
+int high = 1;
+
+     while(reader.get(high) < target) {
+         low = high;
+         high = 2*high;
+     }
+
+     return binarySearch(reader, target, l,h);
+    }
+
+
+    int binarySearch(ArrayReader reader, int target,int l,int h) {
+
+        while(l<=h){
+
+            int mid = l + (h-l)/2;
+
+            if(reader.get(mid)  == target) {
+               return mid; 
+            } else if(reader.get(mid) > target) {
+               h = mid -1; 
+            } else {
+               l = mid +1;
+             }
+            }
+
+            return -1;
+        }
+    }
+}
