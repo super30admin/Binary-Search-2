@@ -1,6 +1,6 @@
 //Time : O(2log n) n is number of array
 //Space : O(1)
-//Solved on Leet code : No ( Fails for [2,2] 3)
+//Solved on Leet code :Yes
 // Approach : binary search twice
 class Findrange {
    class Solution {
