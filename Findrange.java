@@ -3,7 +3,6 @@
 //Solved on Leet code :Yes
 // Approach : binary search twice
 class Findrange {
-   class Solution {
     public int[] searchRange(int[] nums, int target) {
        
         if(nums== null || nums.length == 0){
@@ -69,8 +68,12 @@ class Findrange {
         }
         return -1;
     }
-    
-}
-    
-    
-}
+
+    public static void main(String[] args){
+        Findrange f = new Findrange();
+        int[] r = f.searchRange(new int[]{1,2,2,3,4}, 2);
+        System.out.println(r[0] +  " " + r[1]);
+        
+    } 
+} 
+
