@@ -5,9 +5,6 @@
 # // Did this code successfully run on Leetcode :yes
 # // Any problem you faced while coding this :knew how it worked but had some trouble in implementing
 
-
-
-
 def searchRange( nums, target: int):
     #three cases:
 
