@@ -5,21 +5,21 @@ Given a list of n-1 integers and these integers are in the range of 1 to n. Ther
 Write an efficient code to find the missing integer. 
 */
 public class Main {
-	public static int findMissingNumber(int ar[], int n) {
-		
-        int low = 0, high = ar.length - 1;
+    public static int findMissingNumber(int arr[], int n) {
+        
+        int low = 0, high = arr.length - 1;
         int mid = 0;
         
         // Missing first number
-        if (ar[low] - low == 2) {
+        if (arr[low] - low == 2) {
             System.out.println("First number is missing");
             return 1;
         }
         
         // Either no number is missing or the last number is missing
-        if (ar[low] - low == 1 && high - low == ar[high] - ar[low]) {
+        if (arr[low] - low == 1 && high - low == arr[high] - arr[low]) {
             // No number is missing
-            if (ar.length == n) {
+            if (arr.length == n) {
                 System.out.println("No number is missing");
                 return -1;
             } else { // last number missing
@@ -28,19 +28,20 @@ public class Main {
             }
         }
         
-        while (high > low + 1)
+        // While there are at least 2 elements
+        while (high - low >= 2)
         {
             mid = low + (high - low) / 2;
-            if ((ar[low] - low) != (ar[mid] - mid))
+            if ((arr[low] - low) != (arr[mid] - mid))
                 high = mid;
             else
                 low = mid;
         }
-        return (ar[low] + 1);
-	}
+        return (arr[low] + arr[high]) / 2;
+    }
 
-	public static void main(String args[]) {
-		int arr[] = new int[] {1,2,3,4,5};
-		System.out.println(findMissingNumber(arr, 6));
-	}
+    public static void main(String args[]) {
+        int arr[] = new int[] {2,3,4,5,6};
+        System.out.println(findMissingNumber(arr, 6));
+    }
 }
