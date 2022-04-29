@@ -1,5 +1,12 @@
 public class FindPeakElement {
 
+  /**
+   * Time complexity :O(logn).
+   * Space complexity :O(1).
+   * Used binary search approach by handling first and last element edge cases. Kept the search space on greater mid ( left || right side)
+   *
+   */
+
   public int findPeakElement(int[] nums) {
     int leftIdx = 0, rightIdx = nums.length - 1, midIdx;
     while (leftIdx <= rightIdx) {
