@@ -2,7 +2,7 @@
 //Space complexity: O(1)
 //Leetcode: Yes
 //Problem: Ran few times on Leetcode to get all test case passing.
-public class FirstLastindexSortedArray {
+public class FirstLastIndexSortedArray {
     public int[] searchRange(int[] nums, int target) {
 
         int[] result = {-1, -1};
@@ -72,7 +72,9 @@ public class FirstLastindexSortedArray {
     } //end of helper search function
 
     public static void main(String args[]) {
+        FirstLastIndexSortedArray ob = new FirstLastIndexSortedArray();
         int[] nums = {10, 20, 40, 40, 40, 40, 50, 50, 70, 80, 90};
-
+        int [] result = ob.searchRange(nums,40);
+        System.out.println("first index: "+ result[0] + " Last Index:  "+ result[1]);
     }
 }
