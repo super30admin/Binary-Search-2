@@ -1,4 +1,6 @@
 public class FindMinInRotatedSortedArray {
+  //Used vanilla binary search with pivot idx storage concept with focus on mid and last only.
+  // Time complexity O(logn) & space complexity is O(1).
 
   public static int findMin(int[] nums) {
     int leftIdx = 0, rightIdx = nums.length - 1;
