@@ -1,3 +1,17 @@
+// Time Complexity : O(logN)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : Yes , took lots of time
+
+// Your code here along with comments explaining your approach
+// The peak can be the middle 
+// The peak can be to the right of the middle -> move low to mid+1
+// The peak can be to the left of the middle --> Move high to md - 1
+
+//Base cases if only element - return that index
+// If first element > second element - return first element as peak
+// If last element > second last element - return last element as peak
+
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) 
