@@ -25,7 +25,7 @@ class Solution {
                 low = mid + 1;
             } else {
                 // target is equal to mid
-                // move to left intil target>mid or mid -1 is smaller
+                // move to left until target>mid or mid - 1 is smaller
                 // 222222
                 if (low == mid || nums[mid - 1] < nums[mid]) {
                     return mid;
@@ -50,7 +50,7 @@ class Solution {
                 low = mid + 1;
             } else {
                 // target is equal to mid
-                // move to left intil target>mid or mid -1 is smaller
+                // move to right until target>mid or mid +1 is larger
                 // 122223
                 if (high == mid || nums[mid + 1] > nums[mid]) {
                     return mid;
