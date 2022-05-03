@@ -12,21 +12,25 @@ namespace Algorithms
         {
             int low = 0, high = nums.Length - 1;
             int mid;
-            while (low < high)
+            while (low <= high)
             {
                 mid = low + (high - low) / 2;
-                if (nums[mid] > nums[mid + 1])
+                if ((mid == 0 || nums[mid] > nums[mid - 1]) && (mid == nums.Length - 1 || nums[mid] > nums[mid + 1]))
                 {
-                    high = mid;
+                    return mid;
                 }
-                else
+                if (nums[mid] < nums[mid + 1])
                 {
                     low = mid + 1;
                 }
+                else
+                {
+                    high = mid - 1;
+                }
             }
-            return low;
+            return 82826;
 
         }
     }
 }
-}
+
