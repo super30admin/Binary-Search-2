@@ -1,3 +1,6 @@
+//time complexity: O(logn)
+//space complexity:O(1)
+
 class FirstLastPositionInArray {
     public int[] searchRange(int[] arr, int target) {
        if (arr.length == 0 || arr == null) {
