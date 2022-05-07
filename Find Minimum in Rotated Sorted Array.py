@@ -2,7 +2,7 @@
 LOGIC - Binary search algorithm is used here by considering the base and edge case conditions.
 If left index is less or equal to right index, we can directly return the first element else
 go in the unsorted direction of the error.
-Time Complexity - O(log N)
+Time Complexity - O(log N), where N indicates the length of the list nums
 Space Complexity - O(log 1)
 '''
 

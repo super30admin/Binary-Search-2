@@ -2,7 +2,7 @@
 LOGIC - Binary Search Algorithm is used here.
 After finding the mid element, considering the base and edge cases conditions, we have to go in the greater directon
 If both side values are greater, we can go in either direction.
-Time Complexity: O(log N)
+Time Complexity: O(log N), where N indicates the length of the list nums
 Space Complexity: O(1)
 '''
 

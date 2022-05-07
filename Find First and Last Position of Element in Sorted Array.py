@@ -1,7 +1,7 @@
 '''
 LOGIC - Two binary searches are needed one on the either side of the direction to find the target.
 Also, have to take care of the base and edge case conditions.
-Time Complexity: O(log N)
+Time Complexity: O(log N), where N indicates the length of the list nums
 Space Complexity: O(log 1)
 '''
 
