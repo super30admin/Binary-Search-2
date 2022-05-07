@@ -3,6 +3,7 @@ LOGIC - Two binary searches are needed one on the either side of the direction t
 Also, have to take care of the base and edge case conditions.
 Time Complexity: O(log N), where N indicates the length of the list nums
 Space Complexity: O(log 1)
+Successfully executed all the testcases and accepted in leetcode
 '''
 
 class Solution:

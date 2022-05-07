@@ -4,6 +4,7 @@ If left index is less or equal to right index, we can directly return the first 
 go in the unsorted direction of the error.
 Time Complexity - O(log N), where N indicates the length of the list nums
 Space Complexity - O(log 1)
+Successfully executed all the testcases and accepted in leetcode
 '''
 
 
