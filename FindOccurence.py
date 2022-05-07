@@ -1,3 +1,5 @@
+#Time complexity:O(logn)
+#sapce complexity: O(1)
 class Solution:
     def searchRange(self, nums, target: int):
         low,high=0,len(nums)-1

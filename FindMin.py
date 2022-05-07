@@ -1,3 +1,5 @@
+#Time complexity:O(logn)
+#sapce complexity: O(1)
 class Solution:
     def findMin(self, nums) -> int:
         res=5001

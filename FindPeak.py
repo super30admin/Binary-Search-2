@@ -1,3 +1,5 @@
+#Time complexity:O(logn)
+#sapce complexity: O(1)
 class Solution:
     def findPeakElement(self, nums) -> int:
         left,right=0,len(nums)-1
