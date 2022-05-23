@@ -1,7 +1,6 @@
 # Time complexity = o(logn)
 # Space complexity = o(1)
 
-
 class Solution(object):
     def searchRange(self, nums, target):
         if len(nums) == 0:
