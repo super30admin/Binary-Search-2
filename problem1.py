@@ -5,11 +5,11 @@ class Solution(object):
     def searchRange(self, nums, target):
         if len(nums) == 0:
             return [-1,-1]
-        l,r,mid,pos1,pos2 = 0,len(nums)-1,0,-1,-1
-        while l<=r:
-            mid = int((l+r)/2)
+        l,h,mid,pos1,pos2 = 0,len(nums)-1,0,-1,-1
+        while l<=h:
+            mid = int((l+h)/2)
             if nums[mid] > target:
-                r = mid -1
+                h = mid -1
                 continue
             if nums [mid] < target:
                 l = mid+1
