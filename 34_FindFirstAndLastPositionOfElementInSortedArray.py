@@ -27,7 +27,9 @@ nums is a non-decreasing array.
 """
 
 '''
-Idea - Two pass binary search. Find first element. From that index, do another binary search pass for last element
+Idea - Two pass binary search. Find first element. From that index, do another binary search pass for last element.
+
+Another approach will be a linear search in O(N) brute force
 '''
 
 
