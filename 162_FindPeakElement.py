@@ -2,6 +2,7 @@
 Leetcode- https://leetcode.com/problems/find-peak-element/submissions/ (submitted)
 TC - O(logN), SC- O(1)
 Challenge - thinking of binary search as a solution for this problem
+Lecture - https://www.youtube.com/watch?v=LEq2VfGnNzI&ab_channel=%7BS30%7D
 
 A peak element is an element that is strictly greater than its neighbors.
 Given an integer array nums, find a peak element, and return its index. If the array contains multiple peaks, return the index to any of the peaks.
