@@ -2,6 +2,7 @@
 Leetcode - https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/ (submitted)
 TC - O(logN), SC- O(1)
 Challenge - coming up with the logic in log(N)
+Lecture - https://www.youtube.com/watch?v=LEq2VfGnNzI&ab_channel=%7BS30%7D
 
 Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
 If target is not found in the array, return [-1, -1].
