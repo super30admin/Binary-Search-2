@@ -1,3 +1,9 @@
+'''
+Time Complexity: O(log(n))
+Space Complexity: O(1)
+Run on Leetcode: YES
+Problems: Handling eleminating conditions
+'''
 class Solution:
     def findPeakElement(self, nums: list[int]) -> int:
         low = 0
