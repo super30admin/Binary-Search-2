@@ -1,7 +1,7 @@
 # Time Complexity : log(n)
 # Space Complexity : O(1)
 # Did this code successfully run on Leetcode : yes
-# Any problem you faced while coding this : Yes, I passed nums[mid:] in the rightsearchRange() fucntion instead of nums as whole. This approch was incorrect as the edited nums losses the original index.
+# Any problem you faced while coding this : yes, was forsgetting to take mid!=0 in  elif(mid!=0 and nums[mid-1]>nums[mid]):
 
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
