@@ -16,7 +16,7 @@ class Solution:
             mid = int(low + (high-low)/2)
             if(nums[low]<nums[high]):
                 return nums[low]
-            elif(mid== 0 or nums[mid]<nums[mid-1]) and (mid == len(nums)-1 or nums[mid]>nums[mid+1]):
+            elif(mid== 0 or nums[mid]<nums[mid-1]) and (mid == len(nums)-1 or nums[mid]<nums[mid+1]):
                 return nums[mid]
             elif(nums[low]<=nums[mid]):
                 low = mid+1
@@ -24,5 +24,5 @@ class Solution:
                 high = mid-1
         return None
 
-#s = Solution()
-#print(s.FindMinElement([2,3,4,5,1]))
+s = Solution()
+print(s.FindMinElement([2,1]))
