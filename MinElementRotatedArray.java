@@ -1,3 +1,8 @@
+//Time Complexity= O(logn)
+//Space Complexity= O(1)
+
+//Successfully ran on leetcode
+
 class MinElement {
  public int findMin(int[] nums) {
      if(nums.length==1) return nums[0];
