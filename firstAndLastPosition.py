@@ -21,13 +21,13 @@ class Solution:
                 mid = low + ((high - low) // 2)
                 
                 if target == nums[mid]:
-                    if mid == 0 or nums[mid - 1] < nums[mid]:
+                    if mid == 0 or nums[mid - 1] < nums[mid]:       # If mid is the first occurence
                         return mid
-                    else:
+                    else:                           # Move leftwards to find the first occurence
                         high = mid - 1    
-                elif target < nums[mid]:
+                elif target < nums[mid]:            # Target lies on the left side (since its a sorted array)
                     high = mid - 1
-                elif target > nums[mid]:
+                elif target > nums[mid]:            # Target lies on the right side (since its a sorted array)
                     low = mid + 1
             return -1
         
@@ -40,13 +40,13 @@ class Solution:
                 mid = low + ((high - low) // 2)
                 
                 if target == nums[mid]:
-                    if mid == len(nums) - 1 or nums[mid + 1] > nums[mid]:
+                    if mid == len(nums) - 1 or nums[mid + 1] > nums[mid]:       # If mid is the last occurence
                         return mid
-                    else:
+                    else:                           # Move rightwards to find the first occurence
                         low = mid + 1    
-                elif target > nums[mid]:
+                elif target > nums[mid]:            # Target lies on the right side (since its a sorted array)
                     low = mid + 1
-                elif target < nums[mid]:
+                elif target < nums[mid]:            # Target lies on the left side (since its a sorted array)
                     high = mid - 1
             return -1
         

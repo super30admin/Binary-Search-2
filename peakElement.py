@@ -12,7 +12,7 @@ class Solution:
         while (low <= high):
             mid = low + ((high - low) // 2)
             
-            # If middle element is peek element
+            # If middle element is peak element or middle lies int index low or high
             if (mid == 0 or nums[mid] > nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] > nums[mid + 1]):
                 return mid
             
@@ -20,7 +20,7 @@ class Solution:
             elif nums[mid + 1] > nums[mid] or mid == len(nums) - 1 :   # Move rightwards
                 low = mid + 1
                 
-            else:
+            else:                                                      # Move leftwards
                 high = mid - 1
                 
         
