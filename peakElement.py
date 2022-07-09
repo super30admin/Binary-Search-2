@@ -15,6 +15,9 @@ Method 2: Do binary search. Find mid value, check if its greater than both of it
 pointer to the element and side greater than the mid. Repeat till you find peak or low = high. --> O(logn)
 **If both neighbors of element are greater than it, move any side as we are not constrained with the maximum peak.**
 
+# Edge case:
+1. Both arrays are sorted.
+
 
 Runtime Complexity: O(logn)
 Space Complexity: O(1)
