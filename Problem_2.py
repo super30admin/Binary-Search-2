@@ -3,36 +3,22 @@
 # You should not implement it, or speculate about its implementation
 # """
 # class ArrayReader(object):
-#    def get(self, index):
-#        """
-#        :type index: int
-#        :rtype int
-#        """
-
 class Solution(object):
-    def search(self, reader, target):
+    def findMin(self, nums):
         """
-        :type reader: ArrayReader
-        :type target: int
+        :type nums: List[int]
         :rtype: int
         """
 
         low = 0
-        high = 1
-        while (reader.get(high) < target):
-            low = high
-            high = 2 * low
-
-        return self.binarySearch(reader, low, high, target)
-
-    def binarySearch(self, reader, low, high, target):
-        while (low <= high):
-            mid = low + (high - low) / 2
-            if (target == reader.get(mid)):
-                return mid
-            elif (target < reader.get(mid)):
-                high = mid - 1
+        high = len(nums)-1
+        while(low<=high):
+            if nums[low]<nums[high]:
+                return nums[low]
+            mid = low + (high-low)/2
+            if(mid==0 or nums[mid]<nums[mid-1])and(mid==len(nums)-1 or nums[mid]<nums[mid+1]):
+                return nums[mid]
+            elif(nums[low]<=nums[mid]):
+                low = mid+1
             else:
-                low = mid + 1
-
-        return -1
+                high = mid-1
