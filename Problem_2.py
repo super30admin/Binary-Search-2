@@ -1,8 +1,6 @@
 # """
-# This is ArrayReader's API interface.
-# You should not implement it, or speculate about its implementation
-# """
-# class ArrayReader(object):
+# Time complexity is O(log n)
+# Space complexity is O(1)
 class Solution(object):
     def findMin(self, nums):
         """
