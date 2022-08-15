@@ -1,6 +1,8 @@
 # Time Complexity: O(logn) + O(logn) ~ O(logn)
 # Space Complexity: O(1)
 
+# In this problem, the concept is to first figure out the start index with binary search, and then similarly figure out end index with Binary search.
+
 
 class Solution:
     def __init__(self):

@@ -1,3 +1,11 @@
+# Time Complexity: O(logn)
+# Space Complexity: O(1)
+
+# In this problem, we use the concept that to find the peak element, we proceed towards the side of the increasing elements
+
+# This is because, if we proceed towards the increasing slope, we are sure that the slope will fall eventually or we will reach the first/last element, which will be the peak.
+
+
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         low = 0
