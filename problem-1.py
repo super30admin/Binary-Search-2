@@ -1,3 +1,8 @@
+# Time-Complexity: O(log(n))
+# Space-Complexity: O(1)
+# Solved in leetcode: yes
+# Problem? : No
+
 import bisect
 class Solution:
     def searchRange(self, nums, target: int):
