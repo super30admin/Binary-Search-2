@@ -1,3 +1,8 @@
+# Time-Complexity: O(log(n))
+# Space-Complexity: O(1)
+# Solved in leetcode: yes
+# Problem? : No
+
 import bisect
 from curses.ascii import SO
 class Solution:

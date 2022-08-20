@@ -1,3 +1,8 @@
+# Time-Complexity: O(log(n))
+# Space-Complexity: O(1)
+# Solved in leetcode: yes
+# Problem? : No
+
 class Solution:
     def findPeakElement(self, nums):
         if len(nums) == 1: return 0
