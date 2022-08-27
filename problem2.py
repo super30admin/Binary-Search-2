@@ -1,4 +1,12 @@
-# UNSUCCESSFUL : :-(
+'''
+153. Find Minimum in Rotated Sorted Array
+TIME COMPLEXITY:    O(logn) this is a binary search
+SPACE COMPLEXITY: O(1)
+LEETCODE: Yes, passed all test cases
+DIFFICULTIES: Nope
+'''
+
+# The idea is to search in unsorted part of the array.
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
@@ -6,30 +14,15 @@ class Solution:
         l = 0
         h = n-1
         
+        if nums[l] <= nums[h]:
+            return nums[l]
+        
         while l<=h:
             m = (l+h)//2
-            if m-1 >=0 and m+1 <= n-1:
-                if nums[m-1] > nums[m] < nums[m+1]:
-                    return nums[m]
-                elif nums[m-1] < nums[m] < nums[m+1]:
-                    h = m-1
-                else:
-                    l = m+1
-            elif m==0:
-                if nums[m] <= nums[h]:
-                    return nums[m]
-                else:
-                    return nums[h]
-            elif m==n-1:
-                if nums[m] <= nums[m-1]:
-                    return nums[m]
-                else:
-                    return nums[m-1]
-            
-            
-                
-        
-            
-        
-        
-        
+            if l == m and nums[l] > nums[h]:
+                return nums[h]
+            # aim is to be in unsorted side
+            if nums[l] <= nums[m]:
+                l = m
+            else:
+                h = m
