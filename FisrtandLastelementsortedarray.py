@@ -1,3 +1,7 @@
+# // Time Complexity : O(logn)
+# // Space Complexity : O(1)
+# // Did this code successfully run on Leetcode :yes
+
 class Solution:
     def searchRange(self, nums: list[int], target: int) -> list[int]:
         if not nums or len(nums) == 0:
