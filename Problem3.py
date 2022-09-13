@@ -9,7 +9,9 @@ You must write an algorithm that runs in O(log n) time.
 Time Complexity- O(log n)
 Space complexity - O(1)
 """
-n = [1, 2, 3, 1]
+# n = [1, 2, 3, 1]
+# n = [1,2,1,3,5,6,4]
+n = [1, 2, 3, 4]
 
 
 def findpeakelement(nums):
@@ -19,19 +21,19 @@ def findpeakelement(nums):
     high = len(nums) - 1
 
     while low <= high:
-        mid = low + (high-low)//2  # prevent overflow
+        mid = low + (high - low) // 2  # prevent overflow
 
-        #similar condition as used in problem2
-        if (mid == low or nums[mid - 1] < nums[mid]) and (mid == high or nums[mid + 1] <= nums[mid]):
+        # check if on mid
+        if (mid == low or nums[mid] > nums[mid - 1]) and (mid == high or nums[mid] > nums[mid + 1]):
             return mid
-        if mid > 0 and nums[mid] < nums[mid-1]:
-            # move left
-            high = mid - 1
-        else:
-            # move right
+
+        # go to the right since its in increasing order
+        # mid == len-1 is checked if mid is the last element
+        if (mid == len(nums) - 1) or nums[mid + 1] > nums[mid]:
             low = mid + 1
-    return mid
+        else:
+            high = mid - 1
+    return -1
+
 
 print(findpeakelement(n))
-
-
