@@ -6,6 +6,14 @@ Given a 0-indexed integer array nums, find a peak element, and return its index.
 You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is always considered to be strictly greater than a neighbor that is outside the array.
 You must write an algorithm that runs in O(log n) time.
 
+Approach --
+1. Find mid.
+2. check if mid is the peak by checking if the element is greater than its neighbours then return the index of the
+element
+2. if mid is not peak, check if the element on the right of mid is greater than mid-element. if yes move right &
+do Binary search
+3. else move left and do Binary search
+
 Time Complexity- O(log n)
 Space complexity - O(1)
 """
