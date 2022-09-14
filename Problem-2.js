@@ -1,4 +1,5 @@
 //Time: O(logn), Space: O(1)
+//Ran Successfully on leetCode - solution accepted
  var findMin = function(nums) {
     let low = 0, high=nums.length-1;
     while(low<=high){

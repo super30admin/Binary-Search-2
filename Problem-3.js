@@ -1,5 +1,5 @@
 //Time: O(log n), Space: O(1)
-
+//Ran Successfully on leetCode - solution accepted
 var findPeakElement = function(nums) {
     let l = 0, r = nums.length - 1;
        while (l < r) {

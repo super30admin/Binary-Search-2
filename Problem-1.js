@@ -1,4 +1,5 @@
-//Time: O(n), Space O(1)
+//Time: O(logn), Space O(1)
+//Ran Successfully on leetCode - solution accepted
  var searchRange = function(nums, target) {
     if(nums.length == 0 ) return [-1,-1];
     if(target < nums[0] || target > nums[nums.length-1]) return [-1,-1];
