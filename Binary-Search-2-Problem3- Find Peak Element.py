@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #10 {Medium }
+ FAANMG Problem #10 {Medium }
 
 Problem 3
 162. Find Peak Element

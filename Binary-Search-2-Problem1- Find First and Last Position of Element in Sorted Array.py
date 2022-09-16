@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #8 {Medium }
+ FAANMG Problem #8 {Medium }
 
 Problem 1
 34. Find First and Last Position of Element in Sorted Array

@@ -1,5 +1,5 @@
 """
-S30 FAANMG Problem #9 {Medium }
+ FAANMG Problem #9 {Medium }
 
 Problem 2
 153. Find Minimum in Rotated Sorted Array
