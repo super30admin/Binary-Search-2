@@ -1,3 +1,7 @@
+// Time Complexity: log(n);
+// Space Complexity: o(1);
+// Did it run on leetcode: Yes
+// Problems faced: No
 public class peakElement {
 
     public int findPeakElement(int[] nums) {
