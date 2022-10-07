@@ -1,3 +1,8 @@
+// Time Complexity: log(n);
+// Space Complexity: o(1);
+// Did it run on leetcode: Yes
+// Problems faced: No
+
 public class findFirstandLastElement {
 
     public int[] searchRange(int[] nums, int target) {
