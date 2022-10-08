@@ -1,3 +1,7 @@
+// Time complexiy : O(log n)
+//Space complexity : O(1)
+
+
 class FirstLastArraySolution {
     public int[] searchRange(int[] nums, int target) {
         int ans[]= {-1,-1};
