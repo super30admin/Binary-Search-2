@@ -1,3 +1,6 @@
+#Time Complexity: log(n)
+#Space Complexity: O(1)
+
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
 

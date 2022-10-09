@@ -1,3 +1,7 @@
+#Time Complexity: log(n)
+#Space Complexity: O(1)
+
+
 class Solution:
     def findMin(self, nums: List[int]) -> int:#O(log n)
         l=0
