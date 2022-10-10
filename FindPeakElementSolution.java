@@ -1,3 +1,5 @@
+// Time complexity : O(log n)
+// Space complexity : O(1)
 class FindPeakElementSolution 
 {
 public int findPeakElement(int[] nums)
