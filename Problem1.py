@@ -1,8 +1,10 @@
 #Time Complexity:
-# O(n)
+# O( log(n))
 
 #Space Complexity:
 # O(1)
+
+#Accepted
 
 # Approach
 # We are executing Binary Search twice, with a few added checks 
