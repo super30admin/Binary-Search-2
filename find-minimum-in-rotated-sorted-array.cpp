@@ -3,7 +3,8 @@
 TC: O(lgn)
 SC: O(1)
 
-*/class Solution {
+*/
+class Solution {
 public:
     int findMin(vector<int>& nums) {
         int l=0, r=nums.size()-1;
