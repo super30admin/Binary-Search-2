@@ -1,6 +1,6 @@
 // Time Complexity :O(log(n))
 // Space Complexity :O(1)
-// Did this code successfully run on Leetcode : No
+// Did this code successfully run on Leetcode : Yes
 // Any problem you faced while coding this : Yes
 
 
@@ -12,25 +12,20 @@ class Solution {
         int n = nums.length;
         int high = n-1;
         int low = 0;
-        int min = nums[low];
         int mid = 0;
         while (low <= high){
             mid = low + (high - low) / 2;
-            if (nums[low] == min){
-                return mid;
+            if (nums[low] <= nums[high]){
+                return nums[low];
             }
-            if(nums[low] < nums[mid]){
-                if((nums[low] < min)&&(nums[mid] < min)){
-                    high = mid;
-                }
-                else{
-                    low = mid;
-                    min = nums[low];
-                }
+            if((mid == 0 || nums[mid] < nums[mid-1]) && (mid == n-1 || nums[mid] < nums[mid+1])){
+                return nums[mid];
+            }   
+            else if (nums[low] <= nums[mid]){
+                low = mid + 1;
             }
             else{
-                low = mid;
-                min = nums[low];
+                high = mid - 1;
             }
         }
         return 0;
