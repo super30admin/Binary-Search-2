@@ -8,7 +8,7 @@
               the same concept of updating the pointers and finding the target. If target is found we return the
               index otherwise return -1.
 
-    Time complexity: log(n)
+    Time complexity: log(n).
     
     Space complexity: O(1).
 
