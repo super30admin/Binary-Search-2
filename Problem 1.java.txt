@@ -1,0 +1,74 @@
+
+// Time Complexity :O(logn + logk)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this :yes, the determination of the direction 
+//when we find the element was confusing at first
+
+
+// Your code here along with comments explaining your approach
+
+
+/*
+Intuition: We know that array is sorted , so we can apply binary search to the problem
+ we will first find the starting index by BS
+ and then from that index to the end , we will find the ending index
+*/
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        if(nums == null || nums.length == 0) return new int[]{-1,-1 };
+
+        // find the starting index of the element
+
+        int low = 0;
+        int high = nums.length - 1;
+        int mid = 0;
+        int firstIndex = -1;
+        int lastIndex = -1;
+        while(low<=high){
+            mid = low + (high - low)/2;
+
+            if(target == nums[mid]){
+                // check if this is the first index of the 
+                if(mid == 0 || nums[mid]!=nums[mid-1]){
+                    firstIndex = mid;
+                    break;
+                }
+                else{
+                    high = mid -1; // go left
+                    continue;
+                }
+            }
+            else if(target > nums[mid]) low = mid +1; // go right
+            else  high = mid -1; // go left
+        }
+
+        // At this point we should have the first index
+        low =mid; // mid is pointing to first index (if any)
+        high =  nums.length - 1;
+
+        while(low<=high){
+            mid = low + (high-low)/2;.
+
+            
+            
+            if(target == nums[mid]){
+                // check if this is the last index of the 
+                if(mid == (nums.length - 1) || nums[mid]!=nums[mid+1]){
+                    lastIndex = mid;
+                    break;
+                }
+                else{
+                    low = mid +1; // go right
+                    continue;
+                }
+            }
+            else if(target > nums[mid]) low = mid +1; // go right
+            else  high = mid -1; // go left
+
+        }
+
+        return new int[]{firstIndex,lastIndex };
+        
+    } 
+}
