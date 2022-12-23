@@ -1,3 +1,6 @@
+# In the array we first run BST (taking Low, High and Middle). Then check if the middle is the target or not and if not we move to the 
+# sorted array either on left or right. If the target is not present in the sorted array then check the otherside of the array and 
+# perform BST and get the answer.
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         if (nums == 0 or nums == None):
