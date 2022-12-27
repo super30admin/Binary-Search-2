@@ -1,0 +1,68 @@
+// Time Complexity : o(log n)
+// Space Complexity : o(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+
+// Your code here along with comments explaining your approach
+/*
+* Find start index separately and end index separately using Binary search
+*
+* */
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int x = searchFirst(nums, target);
+        int y = searchLast(nums, target);
+        return new int[]{x, y};
+    }
+
+    public int searchLast(int[] nums, int target){
+        int n = nums.length;
+        int low = 0;
+        int high = n-1;
+
+        while(low <=high){
+            int mid = low + ( high - low)/2;
+            if( nums[mid] == target){
+                if(mid == n - 1 || nums[mid] != nums[mid+1]){
+                    return mid;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            if( nums[mid] < target){
+                low = mid +1;
+            } else if( nums[mid] > target){
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+
+    public int searchFirst(int[] nums, int target){
+        int n = nums.length;
+        int low = 0;
+        int high = n-1;
+
+        while(low <=high){
+            int mid = low + ( high - low)/2;
+            if( nums[mid] == target){
+                if(mid == 0 || nums[mid] != nums[mid-1]){
+                    return mid;
+                } else {
+                    high = mid - 1;
+                }
+            }
+            if( nums[mid] < target){
+                low = mid +1;
+            } else if( nums[mid] > target){
+                high = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+}
