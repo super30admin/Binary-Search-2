@@ -1,5 +1,5 @@
 #Time Complexity : O(logN), N being length of array. 
-#Space Complexity : O(1), because input and output are not counted towards the space. 
+#Space Complexity : O(1ogN), because am using recursion. 
 #Did this code successfully run on Leetcode : Yes
 #Any problem you faced while coding this : Fiddled with the binaryRight portion 
 #for a while due to an error in code, which was found later. 
