@@ -44,7 +44,7 @@ public class FindMInInRotatedSortedArray {
 
 	public static void main(String args[]) {
 		int[] dup = { 1 };
-		System.out.println("max->" + findMin(dup));
+		System.out.println("min->" + findMin(dup));
 
 	}
 }
