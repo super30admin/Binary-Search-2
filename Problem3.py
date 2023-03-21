@@ -1,3 +1,5 @@
+# T.c -> O(log n)
+# S.c -> O(1)
 class Solution:
     def findPeakElement(self, nums: List[int]) -> int:
         if nums is None or len(nums)==0:
