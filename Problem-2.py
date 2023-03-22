@@ -1,11 +1,11 @@
-// Time Complexity : O(logn)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode : yes
-// Any problem you faced while coding this :no
+# Time Complexity : O(logn)
+# Space Complexity : O(1)
+# Did this code successfully run on Leetcode : yes
+# Any problem you faced while coding this :no
 
 
-// divide array into 2 parts, check which part is unsorted.
-// if the array is sorted return low index, else move towards unsorted part
+# divide array into 2 parts, check which part is unsorted.
+# if the array is sorted return low index, else move towards unsorted part
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:
