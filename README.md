@@ -19,18 +19,22 @@ Output: [-1,-1]
 
 ****
 Approach:
-1. Perform binarySearch on the lhs and rhs seperately
-2. When performing binarySearch on lhs:
-    2.1. If mid == Target; adjust high = mid -1 and call binarySearch function
-    2.2. Return indexLeft if its not -1
-    2.3. Else return mid
-3. When performing binarySearch on rhs:
-    2.1. If mid == Target; adjust low = mid +1 and call binarySearch function
-    2.1. Return indexRight if its not -1
-    2.2. Else return mid
+1. Perform binarySearch to get to the target.
+   Once we get to the target, perform binarySearch on the lhs of the list to get the lowest
+   
+   Possible value of lowest
+   -1 , mid, -1<index<mid-1
+	
+2. Once we get the lowest, perform binarySearch on the rhs to get the highest.
+   Our low = lowest as we will be traversing the remaining rhs half of the array
+
+   Possible value of highest
+   -1 , mid, mid+1<index<len(nums)
+  
+3. Later return [lowest,highest]
 
 Time Complexity 
-2 * 0(logn) 
+2 * 0(logn) ==== 0(logn)
 
 Since we ignore constants it's 0(logn)
 ****
