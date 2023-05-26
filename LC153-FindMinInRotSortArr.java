@@ -5,13 +5,20 @@
 
 
 // Your code here along with comments explaining your approach in three sentences only
+/*
+ min is the point which is surronded by higher values. We can check if mid is surrounded by high value or not.
+if (mid > l) l = mid+1
+else if (mid) 
 
+ */
 
 
 class Solution {
     public int findMin(int[] nums) {
         int l = 0;
         int r = nums.length-1;
+
+        if (nums[l] <= nums[r]) return nums[l]; // sorted array. Equal check if single element array
 
         while(l<=r){
             int mid = l + (r-l)/2;
@@ -27,7 +34,6 @@ class Solution {
             else if (nums[mid] < nums[r] && nums[l] > nums[r]) {
                 r = mid-1;
             }
-            else return nums[l];// array is sorted
         }
 
         return nums[0];
