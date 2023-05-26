@@ -4,7 +4,7 @@
 // Any problem you faced while coding this :
 
 
-// Your code here along with comments explaining your approach
+// Your code here along with comments explaining your approachgi
 class FirstAndLastPosition
 {
     private int firstIndex;
