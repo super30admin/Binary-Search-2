@@ -24,11 +24,6 @@ class Solution(object):
                     return 0
                 else:
                     return 1
-            if mid==r:
-                if nums[r-1]>=nums[r-2]:
-                    return r-1
-                else:
-                    return r-2
             if nums[mid]>nums[mid+1] and nums[mid]>nums[mid-1]:
                 return mid
             if nums[mid]<nums[mid-1]:
