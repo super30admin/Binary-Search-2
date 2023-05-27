@@ -25,13 +25,14 @@ class Solution {
 
             if (mid<nums.length-1 && nums[mid+1]<nums[mid]) return nums[mid+1]; // we got min
             
-            if (mid>0 && nums[mid-1]>nums[mid]) return nums[mid]; // we got min
+            // if (mid>0 && nums[mid-1]>nums[mid]) return nums[mid]; // we got min
+            if (mid == 0 || nums[mid-1]>nums[mid]) return nums[mid]; // we got min
             
 
-            if (nums[mid]> nums[l] && nums[l] > nums[r]) {
+            if (nums[mid]> nums[l]) {
                 l = mid +1;
             }
-            else if (nums[mid] < nums[r] && nums[l] > nums[r]) {
+            else if (nums[mid] < nums[r]) {
                 r = mid-1;
             }
         }
