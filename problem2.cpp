@@ -4,7 +4,7 @@
 # Any problem you faced while coding this : No
 
 
-/*We run binary search through the array and keep comparing the left and right pointers*/
+/*We run binary search through the array and keep comparing the left and right*/
 
 class Solution {
 public:
