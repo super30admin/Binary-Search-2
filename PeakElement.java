@@ -1,11 +1,11 @@
-// Time Complexity : O(logn) [2 binary search]
+// Time Complexity : O(logn) [binary search]
 // Space Complexity : O(1) //since we are not using any extra space
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : Yes . Got array index out of bounds on line 29 and 53 and added a check
 
 
 // Your code here along with comments explaining your approach in three sentences only
-
+// We do binary search by moving towards the larger part of array
 
 class Solution {
     public int findPeakElement(int[] nums) {
@@ -20,7 +20,7 @@ class Solution {
 if((mid == 0 || nums[mid] > nums[mid-1]) && (mid == nums.length -1 || nums[mid] > nums[mid+1])){
               return mid ;
         }
-        // if mid is greater than the target
+        // if the right element is greater m0ve towards the right
         else if(nums[mid] < nums[mid+1] ){
 
             low= mid+1;

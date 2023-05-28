@@ -1,5 +1,5 @@
 // Time Complexity : O(logn) [2 binary search]
-// Space Complexity : O(1) //since we are noy using any extra space
+// Space Complexity : O(1) //since we are not using any extra space
 // Did this code successfully run on Leetcode : yes
 // Any problem you faced while coding this : Yes . Got array index out of bounds on line 29 and 53 and added a check
 
