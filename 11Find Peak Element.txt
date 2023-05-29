@@ -1,0 +1,35 @@
+162. Find Peak Element
+
+
+// Time Complexity :O(log n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :no
+
+
+// Your code here along with comments explaining your approach in three sentences only
+
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int low=0,high=nums.length-1;
+        
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if( (mid==0 || nums[mid]>nums[mid-1] )&& 
+            (mid==nums.length-1||nums[mid]>nums[mid+1] )){
+                return mid;
+            }else if(mid>0 && nums[mid-1]>nums[mid] ){
+                //skip left side
+                high=mid-1;
+            }else{
+                //skip right side
+                low=mid+1;
+            }
+
+        }
+        return -1;
+
+
+        
+    }
+}
