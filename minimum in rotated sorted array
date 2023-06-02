@@ -1,0 +1,44 @@
+//O(logn)time complexity
+// O(1) space complexity
+// ran on leetcode
+
+
+class Solution {
+    public int findMin(int[] nums) {
+        // initializing a left and a right variable to decrease the search size after every interval.
+        int left=0;
+        int right= nums.length-1;
+      // a target variable to store the minimum value
+        int minimum=nums[right];
+       
+        // binary search
+        while (left<=right){
+            // middle variable to find the middle value and decrease the search size by half after every interval
+            int mid = left + (right-left)/2;
+  // the situation in which there are only two elements left in the search interval
+            if (left==mid ){
+                if (nums[left]<minimum){
+                    minimum=nums[left];}
+                else if (nums[right]<minimum){
+                    
+                    minimum=nums[right];}
+                    break;
+                 }
+                 // if the left side is sorted, we only need to compare the first element of left side for the minimum value as all the other elements are bigger than the first elemnt of th sorted side. 
+                 if (nums[left]<nums[mid]){
+                    if (minimum>nums[left]){
+                     minimum= nums[left];}
+                     left=mid+1;
+                 }
+                 //if the right side is sorted, we only need to compare the first element of right side for the minimum value as all the other elements are bigger than the first elemnt of th sorted side.
+                 else if (nums[mid]<nums[right]) {
+                     if(minimum>nums[mid]){
+                     minimum=nums[mid];}
+                 right=mid-1;}
+
+            }
+            // we return the minimum element 
+            return minimum;
+        }
+
+    }
