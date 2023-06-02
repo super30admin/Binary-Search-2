@@ -1,3 +1,10 @@
+// O(logn) time complexity
+// O(1) space complexity
+// ran on leetcode
+
+
+
+
 class Solution {
     public int[] searchRange(int[] nums, int target) {
         int []answer = {-1,-1};
