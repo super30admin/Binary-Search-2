@@ -1,3 +1,13 @@
+
+// TC:O(logN)
+// SC:O(1)
+
+// Approach:
+// A peak elemnet is the one which have elements less than it on both sides.
+// So,checking for such element and if not moving in the direction of greater element.
+
+
+
 class Solution {
 public:
     int findPeakElement(vector<int>& nums) 

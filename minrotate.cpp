@@ -4,7 +4,7 @@
 
 // Approach:
 // By observing ,minimum always present on the unsorted side ,
-// if it is sorted value at low index is the minimum value.,
+// if it is sorted, value at low index is the minimum value.,
 // Minimum is lying in unsorted part of the array,And two base cond is mid+1 > mid <mid-1, && nums[low]<nums[mid]
 
 class Solution {
