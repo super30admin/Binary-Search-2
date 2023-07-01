@@ -26,6 +26,7 @@ public class FirstAndLastPositionOfElement {
                 right = mid - 1;
                 if (nums[mid] == target) {
                     position = mid;
+                    System.out.println("First Occurrence Position: " + position);
                 }
             } else {
                 left = mid + 1;
@@ -49,6 +50,7 @@ public class FirstAndLastPositionOfElement {
                 left = mid + 1;
                 if (nums[mid] == target) {
                     position = mid;
+                    System.out.println("Last Occurrence Position: " + position);
                 }
             } else {
                 right = mid - 1;
