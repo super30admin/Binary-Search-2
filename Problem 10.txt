@@ -1,0 +1,37 @@
+// Time Complexity :O(log n)
+
+// Did this code successfully run on Leetcode : Yes
+// Any problem you faced while coding this : n/a
+
+
+// Your code here along with comments explaining your approach : pivot always lies on unsorted side. Find middle element and keep moving to unsorted side till middle element is less than the left and right neighbor.
+
+
+class Solution {
+    public int findMin(int[] nums) {
+        if(nums==null || nums.length==0) return -1;
+        int n=nums.length;
+        int low=0;
+        int high=n-1;
+        while(low<=high)
+        {
+            if(nums[low]<nums[high])
+            {
+                return nums[low];
+            }
+            int mid=low+(high-low)/2;
+            if((mid==0 ||nums[mid]<nums[mid-1]) && (mid==n-1 || nums[mid]<nums[mid+1])){
+                return nums[mid];
+            }
+            if(nums[low]<=nums[mid]){
+                low=mid+1;
+            }
+            else
+            {
+                high=mid-1;
+            }
+        }
+        return -1;
+        
+    }
+}
