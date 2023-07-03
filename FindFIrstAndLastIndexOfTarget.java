@@ -1,3 +1,8 @@
+// Time Complexity : log(n)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : No
+
 class FindFirstAndLastIndex0fTarget {
     public int[] searchRange(int[] arr, int target) {
         if(arr == null || arr.length == 0) return new int[] {-1,-1};
