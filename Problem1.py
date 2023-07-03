@@ -1,34 +1,50 @@
-// Time Complexity : O(log m + log n)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode : Yes
-// Any problem you faced while coding this : No
-
+# In a array of repeating elements, first index of the element can be found using binary search.
+# second binary search for finding the last index of the element
 
 class Solution:
-    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
-        m = len(matrix)
-        n = len(matrix[0])
-        # first binary search for rows
-        low = 0
-        high = m-1
-        while(low<=high):
-            mid = low + (high - low)//2
-            if matrix[mid][0]<=target and matrix[mid][n-1]>=target:
-                break
-            elif matrix[mid][0]<target:
-                low = mid+1
-            elif matrix[mid][0]>target:
-                high = mid-1
-        row = mid
-        #second binary search for columns
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        if len(nums) == 0:
+            return [-1,-1]
+        elif target<nums[0] or target>nums[-1]:
+            return [-1,-1]
+
+        else:
+            left=self.binarySearchLeft(nums,target)
+            if (left==-1):
+                return [-1,-1]
+            else:
+                right = self.binarySearchRight(nums,target)
+                if right ==-1:
+                    return [left, left]
+            return [left,right]
+        
+    def binarySearchLeft(self, nums, target):
         low=0
-        high=n-1
-        while(low<=high):
-            mid=low + (high - low)//2
-            if matrix[row][mid] == target:
-                return True
-            elif matrix[row][mid] > target:
+        high = len(nums)-1
+        while low<=high:
+            mid = low + (high-low)//2
+            if nums[mid]==target:
+                if mid==0 or nums[mid-1]<target:
+                    return mid
+                else:
+                    high=mid-1
+            elif nums[mid]>target:
                 high = mid-1
             else:
                 low = mid+1
-        return False
+        return -1
+    
+    def binarySearchRight(self, nums, target):
+        low=0
+        high = len(nums)-1
+        while low<=high:
+            mid = low + (high-low)//2
+            if nums[mid]==target:
+                if mid==len(nums)-1 or nums[mid+1]>target:
+                    return mid
+                else:
+                    low=mid+1
+            elif nums[mid]>target:
+                high = mid-1
+            else:
+                low = mid+1

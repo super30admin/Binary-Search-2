@@ -1,23 +1,18 @@
-// Time Complexity : O(log n)
-// Space Complexity : O(1)
-// Did this code successfully run on Leetcode :
-// Any problem you faced while coding this :
+# I am using binary search to find the mid element. I am comparing it with the element to its left and right. 
+# Once the increasing slope is found, low or high index is updated accordingly.
 
 
-
-class InfiniteSortedArray:
-    def search(self, reader: ArrayReader, target: int) -> int:
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
         low = 0
-        high = 1
-        while reader.get(high) < target :
-            low = high
-            high = 2*high
-
+        high = len(nums)-1
+        
         while low <= high:
-            mid = low +( high - low)//2
-            if reader.get(mid) == target:
+            mid = low + (high - low)//2
+            if (mid==0 or nums[mid]> nums[mid-1]) and (mid==len(nums)-1 or nums[mid]> nums[mid+1]):
                 return mid
-            elif reader.get(mid)<target:
-                low = mid+1
-            else:
-                high = mid-1
+            elif mid != 0 and nums[mid] < nums[mid-1]:
+                high=mid-1
+            elif mid!=len(nums)-1 or nums[mid] < nums[mid+1]:
+                low= mid+1
+        return -1
