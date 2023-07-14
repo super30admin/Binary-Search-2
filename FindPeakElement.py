@@ -13,6 +13,7 @@ class Solution(object):
             if (mid==0 or nums[mid]>nums[mid-1]) and (len(nums)-1==mid or nums[mid]>nums[mid+1]):
                 return mid
             elif nums[mid]<nums[mid+1]:
+                #This also works but we shold also make sure that the mid is not the last element.
                 l=mid+1
             else:
                 h=mid-1
