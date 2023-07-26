@@ -21,10 +21,10 @@ public:
         while(low <= high){
             int mid = low + (high - low) / 2;
             if((mid == 0 || nums[mid] > nums[mid - 1]) && 
-                (mid == nums.size() - 1 || nums[mid] > nums[mid + 1])){
+                (mid == nums.size() - 1 || nums[mid] > nums[mid + 1])){  //order matters
                     return mid;
                 } 
-            else if(mid > 0 && nums[mid] < nums[mid - 1]){
+            else if(mid > 0 && nums[mid] < nums[mid - 1]){  //add > 0 check
                 high = mid - 1;
             }
             else{
