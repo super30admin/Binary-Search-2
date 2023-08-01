@@ -1,5 +1,4 @@
-'''
-This Python code defines a class Solution with a method findPeakElement, which performs binary search to find a peak element in a given list of integers.
+'''This Python code defines a class Solution with a method findPeakElement, which performs binary search to find a peak element in a given list of integers.
 
 The binary search is applied to efficiently locate a peak element, which is an element greater than its adjacent neighbors.
 
