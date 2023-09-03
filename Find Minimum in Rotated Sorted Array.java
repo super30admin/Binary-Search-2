@@ -19,6 +19,7 @@ class Solution {
             int mid = low + (high-low)/2; // To prevent integer overflow exception
             if((mid == low || nums[mid]<nums[mid-1]) && ( mid == high ||nums[mid]<nums[mid+1])) // to check if the mid element is the minimum element of the array.
             // The failing case if we remove right part of the if statement[2,1]
+            // The failing case if we remove left part of the if statement [1,2,3,4,5]
             {
                 return nums[mid]; 
             }
