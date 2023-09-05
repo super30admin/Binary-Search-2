@@ -2,12 +2,12 @@
  TC: O(log n)
  SC: O(1)
 
- Approch:
+ Approach:
 
  Since we have to do it on O(log n) times we do binary search
 
- In a rotated sorted array the condition to rememeber is that atleast one side is always sorted
- Also the likelyhood of the min element being in the array would be in the unsorted section
+ In a rotated sorted array the condition to remember is that at least one side is always sorted
+ Also the likelihood of the min element being in the array would be in the unsorted section
  The smallest element in the array would be smaller than the element on the left and the right
 
  */
@@ -25,7 +25,7 @@ var findMin = function(nums) {
   while (low <= high) {
     // The first time this checks that if the entire array is sorted,
     //  from the next time onwards then it checks within the given high and low
-    //  and if it staisfies then return nums[low]
+    //  and if it satisfies then return nums[low]
     if (nums[low] <= nums[high]) {
       return nums[low]
     }
