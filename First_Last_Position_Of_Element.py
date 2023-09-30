@@ -1,3 +1,4 @@
+##TC= O(LogN)
 class Solution:
     def searchRange(self, nums:list[int],target:int ) -> list[int]:
         left = self.binSearch(nums,target,True)
