@@ -16,7 +16,19 @@ public class FirstLastPosition {
     }
 
     public int[] searchRange(int[] nums, int target) {
+        /**
+         * Optimizations
+         */
+        int n = nums.length;
+        if (n == 0 || nums[0] > target || target > nums[n - 1]) {
+            return new int[] { -1, -1 };
+        }
+
         int lb = lowerBound(nums, target);
+        if (lb == -1) {
+            return new int[] { -1, -1 };
+        }
+
         int ub = upperBound(nums, target);
 
         return new int[] { lb, ub };
