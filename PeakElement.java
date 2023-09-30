@@ -1,3 +1,24 @@
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+/**
+ * NOTE: the border elements can be the most probable ans => so check for both
+ * first => and exit if found
+ * 
+ * NOTE: adjacent elements are not duplicates
+ * 
+ * Apply Binary Search => check if mid is peak => if yes, return and exit
+ * 
+ * Else, mid is not the peak => peak can be on either left or right half to the
+ * mid
+ * 
+ * if the mid element > the previous element => we know mid is not > next
+ * element => probably next could be the peak (as mid is not the peak) => so
+ * search on the right half
+ * else if the mid element < the previous element => we know next element is not
+ * > mid => probably previous could be the peak (as mid is not the peak) => so
+ * search on the left half
+ */
 public class PeakElement {
     public PeakElement() {
 

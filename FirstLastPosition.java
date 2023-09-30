@@ -1,3 +1,14 @@
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : no
+
+/**
+ * Intuition:
+ * Find the Lower Bound and Upper Bound for the target in the sorted array
+ * Hence, ans = [lower_bound, upper_bound]
+ * 
+ * TC: O(2 log n)
+ * SC: O(1)
+ */
 public class FirstLastPosition {
 
     public FirstLastPosition() {
