@@ -22,6 +22,16 @@ public class MinRotatedSortedArray {
         int n = nums.length;
         int lo = 0;
         int hi = n - 1;
+
+        /**
+         * Optimization:
+         * 
+         * if the entire array is sorted => return 0
+         */
+        if (nums[lo] <= nums[hi]) {
+            return 0;
+        }
+
         int mid;
         int min = Integer.MAX_VALUE;
         while (lo <= hi) {
