@@ -1,3 +1,4 @@
+#TC = O(LogN)
 class Solutions:
     def findMin(self,num:list[int])-> int:
         N = len(num)
