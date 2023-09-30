@@ -9,6 +9,7 @@ class Solution:
     def findMin(self, nums: List[int]) -> int:
         low = 0; high = len(nums) - 1
         min_ele = float('inf')
+        if nums[low] <= nums[high]: return nums[low]
         while (low <= high):
             mid = low + (high - low) // 2
             min_ele = min(min_ele, nums[mid])
