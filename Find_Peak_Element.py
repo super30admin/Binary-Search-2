@@ -1,3 +1,4 @@
+## Time Complexity = O(LogN)
 class Solution:
     def Find_Peak_Element(self,nums:list)->int:
         l,r = 0, len(nums)-1
