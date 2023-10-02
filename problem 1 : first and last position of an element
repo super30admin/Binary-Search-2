@@ -1,0 +1,39 @@
+#time complexity : O(logn)
+#space complexity: O(n)
+class Solution:
+    def binarySearchfirst(self, nums: List[int], target: int, low:int, high:int):      #run binary search for first index
+        while(low<=high):
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                if(mid==low or nums[mid]>nums[mid-1]):
+                    return mid
+                else: high = mid-1
+            elif nums[mid]>target:
+                high=mid-1                  
+            else: low=mid+1
+        return -1
+    def binarysearchlast(self, nums: List[int], target: int, low:int, high:int):          #run binary search for last index
+        while(low<=high):
+            mid = low+(high-low)//2
+            if nums[mid]==target:
+                if(mid==high or nums[mid]<nums[mid+1]):
+                    return mid
+                else: low = mid+1
+            elif nums[mid]>target:
+                high=mid-1
+            else: low=mid+1
+        return -1
+    
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        n = len(nums)
+        low,high = 0, n-1
+        if (n==0): 
+            return [-1,-1]
+        if (nums[0]>target or nums[n-1]<target):
+            return [-1,-1]
+        first = self.binarySearchfirst(nums,target,low,high)
+        last = self.binarysearchlast(nums,target,low,high)
+        return [first,last]
+
+        
+        
