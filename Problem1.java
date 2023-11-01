@@ -1,6 +1,6 @@
 package Q_34_Find_First_and_Last_Position_of_Element_in_Sorted_Array;
 
-public class Solution {
+public class Problem1 {
 
 
 	public int[] searchRange(int[] nums, int target) {
