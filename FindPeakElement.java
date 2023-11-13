@@ -1,4 +1,4 @@
-// Time Complexity: O(long(n))
+// Time Complexity: O(log(n))
 // Space Complexity: O(1)
 
 // Using binary search algorith. We will move towards higher side. We will definitely get peak of mountain
