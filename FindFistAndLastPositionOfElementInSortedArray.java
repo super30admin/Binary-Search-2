@@ -1,4 +1,4 @@
-// Time Complexity : 2long(n)
+// Time Complexity : 2log(n)
 // Space Complexity: O(1)
 
 // Find first and Last position of target element using binary search algorithm
