@@ -1,0 +1,30 @@
+
+Problem Statement : Find the starting and ending position of a given target value.
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+First we do Binary search to find the starting index, ranging from first and last elem of the array,
+then we perform binary search to find the last index, ranging from first index to last elem of the array.
+
+Problem Statement : Find the minimum element in Rotated Sorted Array
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : Yes
+Any problem you faced while coding this : Nope
+
+Your code here along with comments explaining your approach in three sentences only :
+We perform binary search on array until mid is smaller than its neighbors
+
+Problem Statement : Find a peak element in random array
+Time Complexity : O(log n)
+Space Complexity : O(1)
+Did this code successfully run on Leetcode : yes
+Any problem you faced while coding this : no
+
+Your code here along with comments explaining your approach in three sentences only :
+We perform binary search on full array if the mid is greater than its neighbors we return the mid index,
+or we keep on with our search where the neighbor is greater than mid and keep moving in that direction until we find
+mid is greater than its neighbors.
