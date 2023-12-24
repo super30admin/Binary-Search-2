@@ -1,5 +1,5 @@
 # Time Complexity : O(logN)
-# Space Complexity : O(N)
+# Space Complexity : O(1)
 # Did this code successfully run on Leetcode : Yes
 # Any problem you faced while coding this : Yes the edge cases are not the best for this problem and seemed wastefule
 # 153. Find Minimum in Rotated Sorted Array
