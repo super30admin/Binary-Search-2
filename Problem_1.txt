@@ -1,0 +1,40 @@
+class Solution(object):
+    def __firstappearance(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        while low<=high:
+            mid = (low+high)//2
+            if nums[mid] == target and (mid == 0 or nums[mid]>nums[mid-1]):
+                return mid
+            if nums[mid]>= target:
+                high = mid-1
+            else:
+                low = mid+1   
+        return -1
+
+    def __lastappearance(self, nums, target):
+        low = 0
+        high = len(nums)-1
+        while low<=high:
+            mid = (low+high)//2
+            if nums[mid] == target and (mid == len(nums)-1 or nums[mid]<nums[mid+1]):
+                return mid
+            if nums[mid]<= target:
+                low = mid+1  
+            else:
+                high = mid-1
+        return -1
+
+    def searchRange(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        if len(nums) == 0:
+            return (-1,-1)
+        else:
+            return(self.__firstappearance(nums, target), self.__lastappearance(nums, target))
+            
+
+        
