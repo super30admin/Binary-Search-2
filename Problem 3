@@ -1,0 +1,24 @@
+# Find Peak Element
+# Time complexity: O(logn)
+
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        left, right = 0, len(nums) - 1
+
+        while left < right:
+            mid = left + (right - left) // 2
+
+            # Check if the mid element is greater than its neighbors
+            if nums[mid] > nums[mid + 1]:
+                # Peak might be on the left side, move right
+                right = mid
+            else:
+                # Peak might be on the right side, move left
+                left = mid + 1
+
+        # At the end of the loop, left and right point to the peak element
+        return left
