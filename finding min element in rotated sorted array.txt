@@ -1,0 +1,30 @@
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        if len(nums) == 0 or nums is None:
+            return -1
+        
+        low = 0
+        high = len(nums) - 1
+        
+        while low < high:
+            mid = low + (high - low) // 2
+            
+            # If the array is already sorted, return the first element
+            if nums[low] < nums[high]:
+                return nums[low]
+            
+            # Check if the mid element is the minimum
+            if (mid == 0 or nums[mid] < nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] < nums[mid + 1]):
+                return nums[mid]
+            
+            # Adjust the pointers based on the minimum element's location
+            if nums[mid] >= nums[low]:
+                low = mid + 1
+            else:
+                high = mid
+        
+        return nums[low]  # Return the current low as the minimum
+
+TC- O(Log n)
+SC- O(1)
+
