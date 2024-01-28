@@ -9,7 +9,7 @@ public:
         //if both part are sorted, then minimum is the first element of left part
         //otherwise, minimum must lie in the unsorted part
         while(lo<hi){
-          int mid = (lo+hi)/2;
+          int mid = lo+(hi-lo)/2;
 
           //if both part are sorted
           if(v[lo] < v[hi])  return v[lo];
