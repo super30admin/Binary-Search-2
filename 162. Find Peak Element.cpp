@@ -10,7 +10,7 @@ public:
         int lo = 0, hi = n-1;
         
         while(lo<hi){
-          int mid = (lo+hi)/2;
+          int mid = lo+(hi-lo)/2;
 
           //check if mid element is peak
           //border case
