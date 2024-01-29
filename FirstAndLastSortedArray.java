@@ -9,46 +9,49 @@
 
 public class FirstAndLastSortedArray {
     class Solution {
+        private int searchFirstIndex(int[] nums, int low, int high, int target) {
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+                if (nums[mid] == target) {
+                    if (mid == 0 || nums[mid - 1] != target) {
+                        return mid;
+                    }
+                }
+                if (target <= nums[mid]) {
+                    high = mid - 1;
+                } else {
+                    low = mid + 1;
+                }
+            }
+            return -1;
+        }
+
+        private int searchLastIndex(int[] nums, int low, int high, int target) {
+            while (low <= high) {
+                int mid = low + (high - low) / 2;
+                if (nums[mid] == target) {
+                    if (mid == nums.length - 1 || nums[mid + 1] != target) {
+                        return mid;
+                    }
+                }
+                if (target >= nums[mid]) {
+                    low = mid + 1;
+                } else {
+                    high = mid - 1;
+                }
+            }
+            return -1;
+        }
+
         public int[] searchRange(int[] nums, int target) {
             int low = 0;
             int high = nums.length - 1;
-            int mid = low + (high - low) / 2;
-            int firstIndex = -1, lastIndex = -1;
-            while (low <= high) {
-                mid = low + (high - low) / 2;
-                if (nums[mid] == target) {
-                    if (mid == 0 || nums[mid - 1] != target) {
-                        firstIndex = mid;
-                        break;
-                    }
-                }
-                if (nums[mid] >= target) {
-                    high = mid - 1;
-                } else {
-                    low = mid + 1;
-                }
+            int firstIndex = searchFirstIndex(nums, low, high, target);
+            if (firstIndex == -1) {
+                return new int[] { -1, -1 };
             }
+            int lastIndex = searchLastIndex(nums, firstIndex, high, target);
 
-            if (low > high) {
-                return new int[] { firstIndex, lastIndex };
-            }
-
-            low = mid;
-            high = nums.length - 1;
-            while (low <= high) {
-                mid = low + (high - low) / 2;
-                if (nums[mid] == target) {
-                    if (mid == nums.length - 1 || nums[mid + 1] != target) {
-                        lastIndex = mid;
-                        return new int[] { firstIndex, lastIndex };
-                    }
-                }
-                if (nums[mid] <= target) {
-                    low = mid + 1;
-                } else {
-                    high = mid - 1;
-                }
-            }
             return new int[] { firstIndex, lastIndex };
         }
     }
