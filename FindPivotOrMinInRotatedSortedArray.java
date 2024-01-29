@@ -1,3 +1,6 @@
+// Time Compexity - O(log N)
+// Space Complexity - O(1)
+
 // Constraints:
 // n == nums.length
 // 1 <= n <= 5000
