@@ -1,5 +1,10 @@
 class Solution {
 public:
+    // Time Complexity : O(logn)
+    // Space Complexity :  O(1)
+    // Did this code successfully run on Leetcode :  Yes
+    // Any problem you faced while coding this :  No
+
     int findMin(vector<int>& v) {
         int n = v.size();
         int lo = 0, hi = n-1; 
