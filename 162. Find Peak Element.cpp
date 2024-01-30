@@ -1,5 +1,10 @@
 class Solution {
 public:
+    // Time Complexity : O(logn)
+    // Space Complexity :  O(1)
+    // Did this code successfully run on Leetcode :  Yes
+    // Any problem you faced while coding this :  No
+
     //lets say for an element i,
     //the neighbor i+1 is bigger,
     //now if we continue moving towards i+1, i+2, i+3, n-1
