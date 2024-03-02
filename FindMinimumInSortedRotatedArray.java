@@ -1,3 +1,6 @@
+//TC : o(log n)
+//SC: o(1)
+
 class Solution {
     public int findMin(int[] nums) {
         int low = 0;

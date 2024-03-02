@@ -1,3 +1,6 @@
+//TC: o(log n)
+//SC : o(1)
+
 class Solution {
     public int findPeakElement(int[] nums) {
         int low = 0;
