@@ -11,7 +11,8 @@ namespace S30_Problems
             p.SearchRange(new int[] { 2, 3, 4, 5, 1});
             p.FindMin(new int[] { 2, 3, 4, 5, 1});
         }
-
+        // Time Complexity: O(log n)
+        // Space Complexity: O(1)
         public int FindPeakElement(int[] nums)
         {
             int low = 0;
@@ -34,7 +35,8 @@ namespace S30_Problems
             }
             return -1;
         }
-
+        // Time Complexity: O(log n)
+        // Space Complexity: O(1)
         public int FindMin(int[] nums)
         {
             int low = 0;
@@ -63,6 +65,8 @@ namespace S30_Problems
             return nums[0];
         }
 
+        // Time Complexity: O(log n) - tried to reduce the time complexity by reducing the search space when finding the last. 
+        // Space Complexity: O(1)
         public int[] SearchRange(int[] nums, int target)
         {
             int low = 0;
