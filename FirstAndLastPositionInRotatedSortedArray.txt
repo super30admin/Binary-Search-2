@@ -1,0 +1,51 @@
+// using a Binary search first to narrow down towards the target -- 
+
+// if target is found then - branching out to two Binary search again -
+//one to identify the left most indes and othe rto identify the rightmost index 
+
+// if target it not found  in the the first Binary search  -1 is returned and the program will never go the left & right Binary search at all
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        return binarySearch(nums, 0, nums.length - 1, target);
+    }
+
+    public int[] binarySearch(int[] nums, int left, int right, int target){
+        if(left <= right){
+            int mid = left + (right-left) /2;
+            if(nums[mid] == target){
+                int leftIndex = findLeftIndex(nums,left,mid, target);
+                int rightIndex = findRightIndex(nums, mid, right, target);
+                return new int[]{leftIndex, rightIndex};
+            }
+            if(nums[mid] > target) return binarySearch(nums, left, mid-1, target);
+                else return binarySearch(nums, mid+1 , right, target);
+        }
+        return new int[]{-1,-1};
+    }
+    public int findLeftIndex(int[] nums, int left, int right,int target){
+        while(left < right){
+            int mid  = left + (right-left) /2;
+            if(nums[mid] >= target) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return left;
+    }
+    
+    public int findRightIndex(int[] nums, int left, int right,int target){
+        if(nums[right] == target) return right;
+        while(left < right){
+            int mid  = left + (right-left+1) /2;
+            System.out.println("RI - left = " +left +" right = " +right +" Mid = " +mid);
+            if(nums[mid] > target) {
+                right = mid-1 ;
+            } else {
+                left = mid;
+            }
+        }
+        return nums[right] == target ? right : -1;
+    }
+}
