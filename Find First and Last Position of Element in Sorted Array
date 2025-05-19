@@ -1,0 +1,85 @@
+// Time Complexity : O(log n)
+// Space Complexity :O(1)
+// Did this code successfully run on Leetcode :yes
+// Any problem you faced while coding this :No
+//Short Description:We will first try to find the first index of the target by using binary search and
+//checking if nums[mid]>nums[mid-1] or mid==0if yes it means it has occured
+//for the first time if no then we will move high to mid-1 as the first occurance
+//will be on the right side. if if don't find the target we will move low and high normally, then we will search for the last index using BS and the low will be the firstindex and then if we find the target then we will mid==n-1|| nums[mid]<nums[mid+1 if yes return else move to left side. If not then do now BS to find the target first.
+
+
+class Solution {
+
+    public int binarySearchFirst(int[]nums,int low,int high,int target){
+
+        while(low<=high){
+            int mid = low+(high-low)/2;
+          if(nums[mid]==target){
+            if(mid==0 || nums[mid]>nums[mid-1]){
+                return mid;
+            }else{
+                //keep moving left
+                high = mid-1;
+            }
+          }else if(nums[mid]>target){
+            high =mid-1;
+          }
+          else{
+            low=mid+1;
+          }
+        }
+          return -1;
+    }
+
+     public int binarySearchLast(int[]nums,int low,int high,int target){
+      int n =nums.length;
+        while(low<=high){
+            int mid = low+(high-low)/2;
+          if(nums[mid]==target){
+            if(mid==n-1|| nums[mid]<nums[mid+1]){
+                return mid;
+            }else{
+                //keep moving right
+                low= mid+1;
+            }
+          }else if(nums[mid]>target){
+            high =mid-1;
+          }
+          else{
+            low=mid+1;
+          }
+        }
+          return -1;
+    }
+    public int binarySearch(int[]nums,int low,int high,int target){
+
+        while(low<=high){
+            int mid = low+(high-low)/2;
+          if(nums[mid]==target){
+            if(mid==0 || nums[mid]>nums[mid-1]){
+                return mid;
+            }else{
+                //keep moving left
+                high = mid-1;
+            }
+          }else if(nums[mid]>target){
+            high =mid-1;
+          }
+          else{
+            low=mid+1;
+          }
+        }
+          return -1;
+    }
+
+    public int[] searchRange(int[] nums, int target) {
+    //null check
+    if(nums== null|| nums.length==0) return new int[]{-1,-1};
+    int n =nums.length;
+    if(target< nums[0]||target> nums[n-1]) return new int[]{-1,-1};
+     int firstIndex = binarySearchFirst(nums,0,n-1, target);
+     if(firstIndex==-1) return new int[]{-1,-1};
+     int lastIndex = binarySearchLast(nums,firstIndex,n-1,target);
+    return new int[]{firstIndex, lastIndex};
+    }
+}
