@@ -1,3 +1,6 @@
+# Time complexity: O(log n)
+# Space complexity: O(1)
+
 class Solution:
     def first_binary_search(self,nums, low, high, target):
         while low <= high:
