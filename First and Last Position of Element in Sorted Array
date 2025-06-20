@@ -1,0 +1,41 @@
+// Time Complexity : O(logN)
+// Space Complexity : O(1)
+// Did this code successfully run on Leetcode : yes
+// Any problem you faced while coding this : The main thing I had an issue with was figuring out how to get the indices of the first and last occurrence of the target. I first tried to do this by searching every element
+to the left of the target and every element to the right, but this ended up taking way too much time and exceeding the program's time limit. 
+
+// Your code here along with comments explaining your approach in three sentences only
+I ended up creating a helper method for binary search, changing the approach based on whether or not we were looking for the first occurrence's index or the last occurrence's index. Searchleft=true looks for the index of 
+the first appearance of target, while searchLeft=false looks for the last appearance, and they keep looking to see if target appears again to the left/right of wherever nums[mid]=target. When a match is found, that index
+is returned, and searchRange returns the proper range.
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int[] range = new int[2];
+        range[0]=binarySearch(nums, target, true);
+        range[1]=binarySearch(nums, target, false);
+        return range;
+    }
+
+    public int binarySearch(int[] nums, int target, boolean searchLeft){
+        int left = 0;
+        int right = nums.length-1;
+        int targetIndex=-1;
+        while(left<=right){
+            int mid = (left+right)/2;
+            if(nums[mid]==target){
+                targetIndex = mid;
+                if(searchLeft){
+                    right = mid-1;
+                } else {
+                    left = mid+1;
+                }
+            } else if(nums[mid]<target){
+                left=mid+1;
+            } else if(nums[mid]>target){
+                right = mid-1;
+            }
+        }
+        return targetIndex;
+    }
+}
