@@ -1,0 +1,65 @@
+// Doing binary search to find both 1st and 2nd occurence
+
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        if(nums == null || nums.length == 0){
+            return new int[] {-1,-1};
+        }
+        int first = firstBinary(nums, target);
+        int second = secondBinary(nums, target);;
+        return new int[] {first, second};
+    }
+
+    //Binary search to find the first occurence
+    public int firstBinary(int[] nums, int target){
+        int low = 0;
+        int high = nums.length - 1;
+        while(low <= high){
+            int mid = low + (high - low)/2;
+            if(nums[mid] == target){
+                //if mid element is target, checking if its the first occurence by comparing with mid-1
+                // if yes and there's an element before it, checking if its target
+                if(mid != 0 && nums[mid-1] == target){
+                    high = mid - 1;
+                }
+                // if not, returning 1st occurence, i.e, mid
+                else{
+                    return mid;
+                }
+            }
+            else if(nums[mid] > target){ 
+                high = mid - 1;    //if target is less than mid, moving right side to search
+            }
+            else{
+                low = mid + 1;     // if target > mid element, moving left side to search
+            }
+        }
+        return -1;
+    }
+    //Binary search to find the second occurence
+    public int secondBinary(int[] nums, int target){
+        int low = 0;
+        int high = nums.length - 1;
+        while(low <= high){
+            int mid = low + (high - low)/2;
+            if(nums[mid] == target){
+                //if mid element is target, checking if its the last occurence by comparing with mid+1
+                // if yes and there's an element after it, checking if its target
+                if(mid != nums.length -1 && nums[mid + 1] == target){
+                    low = mid + 1;
+                }
+                // if not, returning last occurence, i.e, mid
+                else{
+                    return mid;
+                }
+            }
+            else if(nums[mid] > target){
+                high = mid - 1;    //if target is less than mid, moving right side to search
+            }
+            else{
+                low = mid + 1;     // if target > mid element, moving left side to search
+            }
+        }
+        return -1;
+    }
+}
