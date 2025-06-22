@@ -1,6 +1,13 @@
 # Binary-Search-2
 Explain your approach in **three sentences only** at top of your code
 
+TC = O(log N)
+SC = O(1)
+
+//Approach:-
+We will apply 2 Binary Searches: 1st to get the first position, and 2nd to get the last position of the element.
+If the element is not found, we return [-1, -1].
+Each binary search is adjusted to shrink toward the correct boundary (start or end).
 
 ## Problem 1: (https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
@@ -19,7 +26,73 @@ Example 2:
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
 
+class Solution {
+    public int[] searchRange(int[] nums, int target) {
+        int left = 0, right = nums.length-1;
+        int first = firstBinary(nums, target, left, right);
+        if(first == -1){
+            return new int[] {-1,-1};
+        }
+
+        int second = secondBinary(nums, target, left, right);
+
+        return new int[]{first, second};
+    }
+    public int firstBinary(int[] nums, int target, int left, int right){
+        while(left<=right){
+            int mid = left + (right-left)/2;
+            if(nums[mid] == target){
+                if(mid > left && nums[mid-1] == target){
+                    right = mid-1;
+                }
+                else{
+                    return mid;
+                }
+            }
+
+            else if(nums[mid] > target){
+                right = mid-1;
+            }
+
+            else{
+                left = mid+1;
+            }
+        }
+
+        return -1;
+    }
+    public int secondBinary(int[] nums, int target, int left, int right){
+        while(left<=right){
+            int mid = left + (right-left)/2;
+            if(nums[mid] == target){
+                if(mid < right && nums[mid+1] == target){
+                    left = mid+1;
+                }
+                else{
+                    return mid;
+                }
+            }
+
+            else if(nums[mid] > target){
+                right = mid-1;
+            }
+
+            else{
+                left = mid+1;
+            }
+        }
+
+        return -1;
+    }
+}
+
 ## Problem 2: (https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+TC = O(log N)
+SC = O(1)
+//Approach:-
+The minimum lies in the unsorted portion, and if the array is already sorted we return nums[left].
+We calculate mid and check if it’s the minimum by comparing it to its neighbors.
+If not, we move to the unsorted half by adjusting left and right pointers accordingly.
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
 
