@@ -1,0 +1,45 @@
+# I started by splitting the bst process into two: one to find the first element and one to find the last.
+# The bstfirst method keeps going to the left of mid till nums[mid] == nums[mid - 1] and the bstlast does the opposite
+# This allows me to easily call those methods to get the first and last values
+
+
+class Solution(object):
+    def searchRange(self, nums, target):
+        first = self.bstfirst(nums, target, 0, len(nums) - 1)
+        if first == -1:
+             return (-1, -1)
+        last = self.bstlast(nums, target, 0, len(nums) - 1)
+
+        return(first, last)
+
+    def bstfirst(self, nums, target, low, high):
+
+        while low <= high:
+            mid = low + ((high - low) / 2)
+            if nums[mid] == target:
+                if mid == 0 or nums[mid - 1] != target:
+                    return mid
+                else:
+                    high = mid - 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return -1
+
+    def bstlast(self, nums, target, low, high):
+
+        while low <= high:
+            mid = low + ((high - low) / 2)
+            if nums[mid] == target:
+                if mid == len(nums) - 1 or nums[mid + 1] != target:
+                    return mid
+                else:
+                    low = mid + 1
+            elif nums[mid] > target:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return -1

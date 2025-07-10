@@ -1,0 +1,26 @@
+# When looking at the problem initially, I realized that the array is always going in an ascending or descending order as same elements can't be neighbors
+# Using this, I followed this logic: if mid is the start or end of an array and if it is greater than its neighbors, it is a peak
+# If that is not the case, then if mid is less than mid + 1, then we will find a solution on the right side of the split and vice versa.
+
+
+class Solution(object):
+    def findPeakElement(self, nums):
+
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = low + (high - low)/2
+            print(mid)
+            if (mid == 0 or nums[mid] > nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] > nums[mid+1]):
+                return mid
+            elif nums[mid] < nums[mid + 1]:
+                low = mid + 1
+            else:
+                high = mid - 1
+        return -1
+
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        

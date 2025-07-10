@@ -1,0 +1,28 @@
+# I realized that if you split a rotated array, at least one half would have to be sorted
+# I used the following logic, if the mid element is the first or last element in an array, and it is smaller than its neighbors, it is the min
+# If the mid element is less than the high element (initially the end of the array), then the min value must be to the left of the mid point.
+
+
+class Solution(object):
+    def findMin(self, nums):
+
+        low, high = 0, len(nums) - 1
+
+        while low <= high:
+            mid = low + (high - low)/2
+
+            if(((mid == 0) or nums[mid] < nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] < nums[mid + 1])):
+                return nums[mid]
+            elif nums[mid] <= nums[high]:
+                high = mid - 1
+            else:
+                low = mid + 1
+
+        return -1
+
+
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        
