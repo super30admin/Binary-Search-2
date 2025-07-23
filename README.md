@@ -19,6 +19,36 @@ Example 2:
 Input: nums = [5,7,7,8,8,10], target = 6
 Output: [-1,-1]
 
+-------------------------------------------------
+def searchRange(nums, target):
+    def findBound(isFirst):
+        left, right = 0, len(nums) - 1
+        bound = -1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                bound = mid
+                if isFirst:
+                    right = mid - 1  # Search left side for first occurrence
+                else:
+                    left = mid + 1   # Search right side for last occurrence
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return bound
+    
+    first = findBound(True)
+    if first == -1:
+        return [-1, -1]  # Target not found
+    last = findBound(False)
+    return [first, last]
+
+
+
+
+-------------------------------------------------
+
 ## Problem 2: (https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
 
 Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
@@ -36,6 +66,26 @@ Output: 1
 Example 2:
 Input: [4,5,6,7,0,1,2]
 Output: 0
+
+-------------------------------------------------
+
+def findMin(nums):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[right]:
+            left = mid + 1
+        elif nums[mid] < nums[right]:
+            right = mid
+        else:
+            right -= 1
+    return nums[left]
+
+
+
+
+-------------------------------------------------
+
 
 ## Problem 3: (https://leetcode.com/problems/find-peak-element/)
 A peak element is an element that is greater than its neighbors.
@@ -62,4 +112,18 @@ Note:
 
 Your solution should be in logarithmic complexity.
 
+-------------------------------------------------
+def findPeakElement(nums):
+    left, right = 0, len(nums) - 1
+    while left < right:
+        mid = (left + right) // 2
+        if nums[mid] > nums[mid + 1]:
+            right = mid
+        else:
+            left = mid + 1
+    return left
 
+
+
+
+-------------------------------------------------
