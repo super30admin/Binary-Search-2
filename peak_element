@@ -1,0 +1,12 @@
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int: #O(logn)
+        """trying to find a peak elemnt by checking the mid+1 element if both low and high are same returning low
+        """
+        low,high=0,len(nums)-1
+        while low<high:
+            mid=(low+high)//2
+            if nums[mid]<nums[mid+1]:
+                low=mid+1
+            else:
+                high=mid
+        return low
