@@ -1,0 +1,82 @@
+Problem 2: (https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+Suppose an array sorted in ascending order is rotated at some pivot unknown to you beforehand.
+
+(i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
+
+Find the minimum element.
+
+You may assume no duplicate exists in the array.
+
+Example 1: Input: [3,4,5,1,2] Output: 1
+
+Example 2: Input: [4,5,6,7,0,1,2] Output: 0
+
+solution:
+class Solution {
+    public int findMin(int[] nums) {
+        int low = 0;
+        int high=nums.length-1;
+
+        while(low<=high){
+        if(nums[low]<=nums[high]){
+         return nums[low];}
+        int mid=low+ (high-low)/2;
+        if(mid>0&&nums[mid]<nums[mid-1]){
+            return nums[mid];
+        }else if(nums[low]<=nums[mid]){
+            low=mid+1;
+
+        }else{
+            high=mid-1;
+        }
+    }
+      return 77;
+}
+}
+points:
+1.Intialize the low and high pointers,check if the low elemenent < =high element return low element
+2. if not check, if mid element and mid element<mid-1 elemenent return mid element.
+3.if low element <=mid element, move low to mid+1 else move high to mid-1.
+
+
+
+
+Problem 3: (https://leetcode.com/problems/find-peak-element/)
+A peak element is an element that is greater than its neighbors.
+
+Given an input array nums, where nums[i] ≠ nums[i+1], find a peak element and return its index.
+
+The array may contain multiple peaks, in that case return the index to any one of the peaks is fine.
+
+You may imagine that nums[-1] = nums[n] = -∞.
+
+Example 1:
+
+Input: nums = [1,2,3,1] Output: 2 Explanation: 3 is a peak element and your function should return the index number 2. Example 2:
+
+Input: nums = [1,2,1,3,5,6,4] Output: 1 or 5 Explanation: Your function can return either index number 1 where the peak element is 2,
+
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int low=0;
+        int high=nums.length-1;
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            if((mid==0 ||nums[mid]>nums[mid-1]) && (mid==nums.length-1 || nums[mid]>nums[mid+1])){
+                return mid;
+            }else if(mid==0||nums[mid]>nums[mid-1])
+            {
+                low=mid+1;
+            }else{
+                high=mid-1;
+            }
+        }
+        return 99;
+    }
+}
+
+points :
+1.`Intialize low and high pointers.
+2.if(low<=high) calculate mid, check mid is peak(if mid is at 0 index return mid or if (mid ==array size-1) element if yes return mid.
+3.if mid element >mid-1 element move low to mid+1 else move high to mid-1.
+
