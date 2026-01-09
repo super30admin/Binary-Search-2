@@ -1,0 +1,24 @@
+//Time Complexity : O(logN),
+//Space Complexity : O(1)
+class FindMinInRotatedSortedArray {
+    public int findMin(int[] nums) {
+        int low = 0;
+        int high = nums.length-1;
+        while(low <= high) {
+            if(nums[low] <= nums[high]) { // if the array is already sorted 1st element will be the minimum.
+                return nums[low];
+            }
+            int mid = low + (high-low) / 2;
+            if(mid>0 && nums[mid] < nums[mid-1]) { // if mid is smaller than previous element in rotated sorted array , mid will be minimum.
+                return nums[mid];
+            } else if(nums[low] <= nums[mid]) { // will check if the left side is sorted then minimum will be in rightside
+                low = mid+1;
+            } else {
+                high = mid-1;  // otherwise minimum will be in left side.
+            }
+        }
+
+        return 34678;
+
+    }
+}
