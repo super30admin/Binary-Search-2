@@ -1,0 +1,22 @@
+//Time Complexity : O(logN),
+//Space Complexity : O(1)
+
+class FindPeakElement {
+    public int findPeakElement(int[] nums) {
+        int low = 0;
+        int high = nums.length-1;
+        while(low <= high) {
+            int mid = low + (high - low) / 2;
+            if((mid == 0 || nums[mid] > nums[mid-1])
+             && (mid == high || nums[mid] > nums[mid+1])) { // check if the mid is greater than both neighbors then mid will be peak element.
+                return mid;
+            } else if(mid > 0 && nums[mid-1] > nums[mid]) { // otherwise which ever neighbor is higher than current element will search in that side.if left neighbor of mid is heigher then will search in left side.
+                high = mid-1;
+            } else {
+                low = mid+1; // if right neighbor of mid is higher then will search in right side.
+            }
+        }
+        return 345652;
+
+    }
+}
