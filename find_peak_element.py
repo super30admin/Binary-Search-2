@@ -1,0 +1,26 @@
+# // Time Complexity :  O(log n)
+# // Space Complexity :  O(1)
+# // Did this code successfully run on Leetcode : Yes
+# // Any problem you faced while coding this : Thinking of edge cases took attempts
+
+class Solution(object):
+    def findPeakElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        low=0
+        high = len(nums)-1
+        if high==0: return 0
+
+        if nums[low]>nums[low+1] : return low
+        if nums[high]>nums[high-1] : return high
+
+        while (low<=high):
+            mid = low + (high-low)//2
+            if nums[mid]> nums[mid+1] and nums[mid]> nums[mid-1]:
+                return mid
+            if nums[mid]>nums[mid+1]:
+                high=mid-1
+            else:
+                low=mid+1
