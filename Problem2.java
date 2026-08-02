@@ -1,5 +1,10 @@
 
-Minimum in Rotated Sorted Array
+//(logn) time complexity
+//faced issues on line where we are returning mid value but other than that its good
+
+//  Find min in rotated sorted array
+
+// Code passed in leetcode : yes
 
 class Solution {
     public int findMin(int[] nums) {
