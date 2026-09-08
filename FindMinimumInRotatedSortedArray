@@ -1,0 +1,34 @@
+
+// Time Complexity :log (n)
+// Space Complexity : o(1)
+// Did this code successfully run on Leetcode :Yes
+// Any problem you faced while coding this :No
+
+//Main Idea: Atleast one side of rotated sorted array is always sorted. Take help of that and move towards unsorted side because minimum element will be on unsorted side.
+class FindMinimumInRotatedSortedArray {
+    public int findMin(int[] nums) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            //if its perfectly sorted array. then return smallest element that is first element
+            if (nums[left] <= nums[right])
+                return nums[left];
+
+            int mid = left + (right - left) / 2;
+            // if mid is the smallest element
+            if ((mid == 0 || nums[mid] < nums[mid - 1]) && (mid == nums.length - 1 || nums[mid] < nums[mid + 1])) {
+                return nums[mid];
+            }
+            //if left is sorted minimum will lie on the right side
+            if(nums[left]<=nums[mid]){
+                left=mid+1;
+            }else{
+                right = mid-1;
+            }
+
+        }
+        return -1;
+
+    }
+}
