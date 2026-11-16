@@ -7,12 +7,23 @@
 #  Why are we doing this, think like this since its a rotated sorted arrray, when nums[low] <= nums[mid], then we are in the rotated part hence we have to go to unrotated part to find minimum,
 #   so we go to the right half, or else we go to left half. and repeat the orocess, so we are basically playing with the ranges.
 
+#Time complexity: O(logn)
+#Space complexity: O(1)
 
 class Solution:
     def findMinimumElement(self, nums):
         low = 0
         high = len(nums) - 1
         while (low <= high):
+            if nums[low] <= nums[high]: return nums[low]
+            mid = (low + high)//2
+            if ((mid == 0 or nums[mid] < nums[mid - 1]) and (mid == len(nums) - 1 or nums[mid] < nums[mid + 1])):
+                return nums[mid]
+            elif nums[low] <= nums[mid]:
+                low = mid + 1
+            else:
+                high = mid - 1
+            
             
             
             
